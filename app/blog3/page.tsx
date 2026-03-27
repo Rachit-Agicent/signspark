@@ -12,7 +12,7 @@ export default function BlogDetailPage() {
             src="/assets/img/blog/blog03.png"
             alt="blog image"
             fill
-            className="object-fill"
+            className="object-cover"
           />
         </div>
       </section>

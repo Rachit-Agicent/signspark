@@ -61,7 +61,7 @@ export default function PocketNegotiator() {
       <div className="max-w-7xl px-4 sm:px-4 lg:px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* LEFT — Phone Image */}
         <div className="flex justify-center relative">
-          <div className="relative w-full h-[600px]">
+          <div className="relative w-full h-[700px]">
             <Image
               key={currentImage}
               src={currentImage}

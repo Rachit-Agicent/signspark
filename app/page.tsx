@@ -78,10 +78,11 @@ export default function Banner() {
     },
     {
       img: "/assets/img/blog/blog03.png",
-      category: "OWNERSHIP",
+      category: "NEGOTIATION",
       time: "4 min read",
-      title: "Your Glovebox Is Obsolete: Why AI Is the Future of Car Ownership",
-      desc: "The days of digging through a 400+ page manual are over. Just ask—SignSpark AI answers your car maintenance questions through a simple, chat-based experience.",
+      title:
+        "The Silent Sign-Off: How Digital Dealerships Can Hide Hidden Fees",
+      desc: "Imagine buying a new car. You've negotiated the price, picked your color, and now you're in the finance office, ready to seal the deal.",
       link: "blog3",
       color: "red",
       btn: "Explore Phase 2 →",
