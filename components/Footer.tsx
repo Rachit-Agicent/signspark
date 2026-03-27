@@ -141,7 +141,8 @@ export default function Footer() {
             <p className="text-lg text-white mt-2">
               Powered by Community Data from{" "}
               <Link
-                href="#"
+                href="https://d3qo2gpyfxf2wz.cloudfront.net"
+                target="_blank"
                 className="text-[#FF8A44]  underline underline-offset-2"
               >
                 CarBuyInsight

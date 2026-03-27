@@ -285,10 +285,10 @@ export default function Banner() {
       {/* Feature-top */}
       <section className="bg-[#F4F1FA] py-8 border-b border-[#D0DAE3]">
         <div className="mx-auto max-w-7xl  px-4 sm:px-4 lg:px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-6">
+          <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-2">
             {/* Left Column (Replaces col-lg-5) */}
             <div className="w-full lg:w-5/12">
-              <div className="flex flex-col sm:flex-row items-center gap-5">
+              <div className="flex flex-col sm:flex-row items-center gap-4">
                 {/* Left Feature Icon (Replaces col-sm-3) */}
                 <div className="w-24 sm:w-1/4 flex-shrink-0">
                   <div className="w-full p-[15px] bg-[#7D6EDA30] flex items-center justify-center rounded-[10px]">
@@ -307,10 +307,14 @@ export default function Banner() {
                   <h5 className="text-[16px] text-[#544898] font-bold mb-2">
                     AI That Keeps Your Deal Fair
                   </h5>
-                  <p className="text-gray-600 text-justify sm:text-left lg:border-r-2 border-[#D0DAE3] lg:pr-6 mt-1">
+                  <p className="text-[#869BB2] text-justify sm:text-left lg:border-r-2 border-[#D0DAE3] lg:pr-2 mt-1">
                     Our intelligent system reviews your contract to uncover
-                    hidden fees, built on state-specific fee rules and ensure
-                    transparency — before you sign.
+                    hidden fees,{" "}
+                    <span className="text-[#544898]">
+                      {" "}
+                      built on state-specific fee rules{" "}
+                    </span>{" "}
+                    and ensure transparency — before you sign.
                   </p>
                 </div>
               </div>
@@ -319,7 +323,7 @@ export default function Banner() {
             {/* Right Column (Replaces col-lg-7) */}
             <div className="w-full lg:w-7/12">
               {/* 3-Column Grid for the feature icons */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-2">
                 {/* Feature 1 */}
                 <div className="flex flex-col items-center text-center">
                   <div className="bg-[#7D6EDA30] w-[70px] h-[70px] flex justify-center items-center rounded-full mb-[10px]">
@@ -331,7 +335,7 @@ export default function Banner() {
                       className="object-contain"
                     />
                   </div>
-                  <h5 className="text-[16px] text-[#544898] font-bold max-w-[150px]">
+                  <h5 className="text-[14px] text-[#544898] font-semibold">
                     100% Private & Secure
                   </h5>
                 </div>
@@ -347,7 +351,7 @@ export default function Banner() {
                       className="object-contain"
                     />
                   </div>
-                  <h5 className="text-[16px] text-[#544898] font-bold max-w-[150px]">
+                  <h5 className="text-[16px] text-[#544898] font-bold">
                     Instant Analysis
                   </h5>
                 </div>
@@ -363,7 +367,7 @@ export default function Banner() {
                       className="object-contain"
                     />
                   </div>
-                  <h5 className="text-[16px] text-[#544898] font-bold max-w-[150px]">
+                  <h5 className="text-[16px] text-[#544898] font-bold ">
                     Built to Protect Car Buyers
                   </h5>
                 </div>
