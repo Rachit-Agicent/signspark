@@ -74,7 +74,7 @@ export default function Banner() {
       desc: "A real-world case study showing how specific AI-generated trigger phrases from SignSpark transformed a moderate deal into a great one—saving the buyer $2,400.",
       link: "blog2",
       color: "green",
-      btn: "Read Guide →",
+      btn: "See the Scripts →",
     },
     {
       img: "/assets/img/blog/blog03.png",
@@ -84,8 +84,8 @@ export default function Banner() {
         "The Silent Sign-Off: How Digital Dealerships Can Hide Hidden Fees",
       desc: "Imagine buying a new car. You've negotiated the price, picked your color, and now you're in the finance office, ready to seal the deal.",
       link: "blog3",
-      color: "red",
-      btn: "Explore Phase 2 →",
+      color: "green",
+      btn: "Read Guide →",
     },
   ];
 
