@@ -11,6 +11,7 @@ import {
   MapPin,
 } from "lucide-react";
 
+
 const steps = [
   {
     id: 0,
