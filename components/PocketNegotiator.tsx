@@ -60,29 +60,42 @@ export default function PocketNegotiator() {
     <section className="w-full bg-white py-16 " id="pocket">
       <div className="max-w-7xl px-4 sm:px-4 lg:px-4 mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* LEFT — Phone Image */}
-        <div className="flex justify-center relative">
-          <div className="relative w-full h-[700px]">
-            <Image
-              key={currentImage}
-              src={currentImage}
-              alt="App screen"
-              fill
-              className="object-contain object-top transition-opacity duration-500"
-              priority
-            />
+        <div>
+          <div className="block lg:hidden mb-6">
+            <p className="text-lg font-semibold  text-[#5C2CC6] uppercase">
+              Negotiate with Confidence
+            </p>
+
+            {/* Heading */}
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
+              Your Pocket <span className="text-[#5C2CC6]">Negotiator.</span>
+            </h1>
+          </div>
+          <div className="flex justify-center relative">
+            <div className="relative w-full h-[700px]">
+              <Image
+                key={currentImage}
+                src={currentImage}
+                alt="App screen"
+                fill
+                className="object-contain object-top transition-opacity duration-500"
+                priority
+              />
+            </div>
           </div>
         </div>
-
         {/* RIGHT — Content */}
         <div className="flex flex-col gap-3">
-          <p className="text-lg font-semibold  text-[#5C2CC6] uppercase">
-            Negotiate with Confidence
-          </p>
+          <div className="hidden lg:block mb-6">
+            <p className="text-lg font-semibold  text-[#5C2CC6] uppercase">
+              Negotiate with Confidence
+            </p>
 
-          {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
-            Your Pocket <span className="text-[#5C2CC6]">Negotiator.</span>
-          </h1>
+            {/* Heading */}
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
+              Your Pocket <span className="text-[#5C2CC6]">Negotiator.</span>
+            </h1>
+          </div>
 
           {/* Description */}
           <p className="text-[#5A5A5A] text-lg leading-relaxed">
