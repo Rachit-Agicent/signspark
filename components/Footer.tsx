@@ -16,12 +16,12 @@ const productLinks = [
   { label: "SignSpark Pro", href: "/#feature" },
   { label: "How it works", href: "/#work" },
   { label: "FAQ", href: "/#faq" },
+  { label: "About Us", href: "/#about" },
 ];
 
 const resourceLinks = [
-  { label: "Car Buying Guide", href: "#" },
-  { label: "Negotiation Scripts", href: "/#pocket" },
-  { label: "About Us", href: "/#about" },
+  { label: "Car Buying Guide", href: "/blog1" },
+  { label: "Negotiation Scripts", href: "/blog2" },
 ];
 
 const legalLinks = [
@@ -141,7 +141,7 @@ export default function Footer() {
             <p className="text-lg text-white mt-2">
               Powered by Community Data from{" "}
               <Link
-                href="https://d3qo2gpyfxf2wz.cloudfront.net"
+                href="https://carbuyinsight.org/"
                 target="_blank"
                 className="text-[#FF8A44]  underline underline-offset-2"
               >
