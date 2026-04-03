@@ -7,7 +7,7 @@ export default function BlogDetailPage() {
     <main className="bg-white">
       {/* HERO IMAGE */}
       <section className="pt-20">
-        <div className="relative h-[65vh] w-full">
+        <div className="relative h-[30vh] sm:h-[65vh] w-full">
           <Image
             src="/assets/img/blog/blog03.png"
             alt="blog image"

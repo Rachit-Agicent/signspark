@@ -123,59 +123,59 @@ export default function Header() {
                   <Link
                     href="/#home"
                     onClick={() => setMobileOpen(false)}
-                    className="px-3 py-2 text-lg font-medium text-black rounded-md transition-color"
+                    className="px-3 py-2 text-lg font-medium text-[#424242] rounded-md transition-color"
                   >
                     Home
                   </Link>
                   <Link
                     href="/#pocket"
                     onClick={() => setMobileOpen(false)}
-                    className="px-3 py-2 text-lg font-medium text-black rounded-md transition-color"
+                    className="px-3 py-2 text-lg font-medium text-[#424242] rounded-md transition-color"
                   >
                     Pocket Negotiator
                   </Link>
                   <Link
                     href="/#about"
                     onClick={() => setMobileOpen(false)}
-                    className="px-3 py-2 text-lg font-medium text-black rounded-md transition-color"
+                    className="px-3 py-2 text-lg font-medium text-[#424242] rounded-md transition-color"
                   >
                     About us
                   </Link>
                   <Link
                     href="/#work"
                     onClick={() => setMobileOpen(false)}
-                    className="px-3 py-2 text-lg font-medium text-black rounded-md transition-color"
+                    className="px-3 py-2 text-lg font-medium text-[#424242] rounded-md transition-color"
                   >
                     "How it works
                   </Link>
                   <Link
                     href="/#faq"
                     onClick={() => setMobileOpen(false)}
-                    className="px-3 py-2 text-lg font-medium text-black rounded-md transition-color"
+                    className="px-3 py-2 text-lg font-medium text-[#424242] rounded-md transition-color"
                   >
                     FAQ
                   </Link>
                   <Link
                     onClick={() => setOpen(true)}
                     href="/#contact"
-                    className="px-3 py-2 text-lg font-medium text-black rounded-md transition-color"
+                    className="px-3 py-2 text-lg font-[500] text-[#424242] rounded-md transition-color"
                   >
                     Contact
                   </Link>
                   <Link
                     href="/#footer"
                     onClick={() => setMobileOpen(false)}
-                    className="px-3 py-2 text-lg font-medium text-black rounded-md transition-color"
+                    className="px-3 py-2 text-lg font-[500] text-[#424242] rounded-md transition-color"
                   >
                     Legal
                   </Link>
                 </nav>
 
                 {/* Mobile Language */}
-                <div className="mt-6 px-4">
+                <div className="mt-2 px-4">
                   <button
                     onClick={() => setLang(lang === "en" ? "es" : "en")}
-                    className="flex items-center gap-2 text-sm font-medium text-black"
+                    className="flex items-center gap-2 text-lg font-medium text-[#424242]"
                   >
                     <Globe size={16} />
                     <span>{lang === "es" ? "Español" : "English"}</span>
