@@ -54,7 +54,7 @@ export default function Header() {
               href="/#work"
               className="px-3 py-2 text-lg font-medium text-black rounded-md transition-color"
             >
-              "How it works
+              How it works
             </Link>
             <Link
               href="/#faq"
@@ -146,7 +146,7 @@ export default function Header() {
                     onClick={() => setMobileOpen(false)}
                     className="px-3 py-2 text-lg font-medium text-[#424242] rounded-md transition-color"
                   >
-                    "How it works
+                    How it works
                   </Link>
                   <Link
                     href="/#faq"
