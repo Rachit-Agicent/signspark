@@ -1,8 +1,10 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useI18n } from "@/lib/i18n/I18nProvider";
 
 export default function BlogDetailPage() {
+  const { t, lang } = useI18n();
   return (
     <main className="bg-white">
       {/* HERO IMAGE */}
@@ -29,31 +31,41 @@ export default function BlogDetailPage() {
 
             <div className="flex justify-between flex-wrap gap-4 items-center">
               <span className="text-green-700 bg-green-100 px-5 py-1 rounded-full text-lg">
-                By SignSpark Editorial Team
+                {t("blog.byTeam")}
               </span>
 
-              <p className="text-gray-500 text-lg">7 Minutes Read Time</p>
+              <p className="text-gray-500 text-lg">
+                7 {t("blog.minutesRead")}
+              </p>
             </div>
           </div>
 
           {/* INTRO */}
           <div className="space-y-4 text-lg text-gray-700">
-            <p>"Can you do any better on the price?"</p>
-
             <p>
-              If you have ever asked a car dealer that question, you’ve already
-              lost.
+              {lang === "es"
+                ? "“¿Puedes mejorar el precio?”"
+                : '"Can you do any better on the price?"'}
             </p>
 
             <p>
-              When you ask a vague question, you get a vague answer:
+              {lang === "es"
+                ? "Si alguna vez le hiciste esa pregunta a un vendedor de autos, ya empezaste perdiendo."
+                : "If you have ever asked a car dealer that question, you’ve already lost."}
+            </p>
+
+            <p>
+              {lang === "es"
+                ? "Cuando haces una pregunta vaga, recibes una respuesta vaga:"
+                : "When you ask a vague question, you get a vague answer:"}
               <em>
                 {" "}
                 "We're already losing money on this car," or "That's just the
                 standard fee everyone pays."
               </em>
-              The conversation ends there. You sign, feeling like you left money
-              on the table.
+              {lang === "es"
+                ? "Ahí termina la conversación. Firmas, sintiendo que dejaste dinero sobre la mesa."
+                : "The conversation ends there. You sign, feeling like you left money on the table."}
             </p>
 
             <p>
@@ -75,13 +87,19 @@ export default function BlogDetailPage() {
               <strong> $2,400 in less than five minutes.</strong>
             </p>
 
-            <p>Here is exactly how he did it.</p>
+            <p>
+              {lang === "es"
+                ? "Así es exactamente como lo logró."
+                : "Here is exactly how he did it."}
+            </p>
           </div>
 
           {/* SECTION */}
           <div className="mt-14">
             <h2 className="text-3xl font-semibold mb-6">
-              The Setup: The "Standard" Rip-Off
+              {lang === "es"
+                ? "La preparación: el “estándar” que te roba"
+                : 'The Setup: The "Standard" Rip-Off'}
             </h2>
 
             <p className="text-lg text-gray-700 mb-4">
@@ -119,7 +137,9 @@ export default function BlogDetailPage() {
           {/* TURNING POINT */}
           <div className="mt-14">
             <h2 className="text-3xl font-semibold mb-6">
-              The Turning Point: Data vs. Opinion
+              {lang === "es"
+                ? "El punto de quiebre: datos vs. opinión"
+                : "The Turning Point: Data vs. Opinion"}
             </h2>
 
             <p className="text-lg text-gray-700 mb-4">
@@ -159,7 +179,9 @@ export default function BlogDetailPage() {
           {/* SCRIPT SECTION */}
           <div className="mt-14">
             <h2 className="text-3xl font-semibold mb-6">
-              The Script: "Say This, Not That"
+              {lang === "es"
+                ? "El guion: “Di esto, no aquello”"
+                : 'The Script: "Say This, Not That"'}
             </h2>
 
             <p className="text-lg text-gray-700 mb-6">
@@ -168,7 +190,9 @@ export default function BlogDetailPage() {
             </p>
 
             <h3 className="text-xl font-semibold mb-4">
-              ❌ The Amateur Approach (What fails)
+              {lang === "es"
+                ? "❌ El enfoque amateur (lo que falla)"
+                : "❌ The Amateur Approach (What fails)"}
             </h3>
 
             <ul className="list-disc ml-6 space-y-3 text-lg text-gray-700">
@@ -189,7 +213,9 @@ export default function BlogDetailPage() {
             </ul>
 
             <h3 className="text-xl font-semibold mt-10 mb-4">
-              ✅ The SignSpark Approach (What worked)
+              {lang === "es"
+                ? "✅ El enfoque SignSpark (lo que funcionó)"
+                : "✅ The SignSpark Approach (What worked)"}
             </h3>
 
             <ul className="list-disc ml-6 space-y-3 text-lg text-gray-700">
@@ -212,7 +238,9 @@ export default function BlogDetailPage() {
 
           {/* OUTCOME */}
           <div className="mt-14">
-            <h2 className="text-3xl font-semibold mb-6">The Outcome</h2>
+            <h2 className="text-3xl font-semibold mb-6">
+              {lang === "es" ? "El resultado" : "The Outcome"}
+            </h2>
 
             <p className="text-lg text-gray-700 mb-4">
               The Finance Manager paused. The "corporate policy" excuse
@@ -248,7 +276,9 @@ export default function BlogDetailPage() {
           {/* FINAL */}
           <div className="mt-14">
             <h2 className="text-3xl font-semibold mb-6">
-              Why "Scripts" Are Your Superpower
+              {lang === "es"
+                ? "Por qué los “guiones” son tu superpoder"
+                : 'Why "Scripts" Are Your Superpower'}
             </h2>
 
             <p className="text-lg text-gray-700 mb-4">
@@ -268,8 +298,9 @@ export default function BlogDetailPage() {
             </p>
 
             <p className="text-lg font-semibold mb-6">
-              Don't leave thousands on the table because you didn't know what to
-              say.
+              {lang === "es"
+                ? "No dejes miles sobre la mesa solo por no saber qué decir."
+                : "Don't leave thousands on the table because you didn't know what to say."}
             </p>
 
             <a href="#!" className="text-purple-600 font-semibold text-lg">

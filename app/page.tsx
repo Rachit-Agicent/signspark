@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { FaApple, FaGooglePlay, FaLock } from "react-icons/fa";
 import { FileSearch } from "lucide-react";
@@ -21,33 +21,36 @@ import {
 } from "lucide-react";
 import ContactModal from "@/components/ContactModal";
 import PocketNegotiator from "@/components/PocketNegotiator";
+import { useI18n } from "@/lib/i18n/I18nProvider";
 
 export default function Banner() {
+  const { t } = useI18n();
+
   const features = [
     {
-      title: "Instant Contract X-ray",
-      desc: "Digitize messy scans in seconds. Reveal every buried line item.",
+      title: t("home.feature1.title"),
+      desc: t("home.feature1.desc"),
       img: "/assets/img/feature/feature1.png",
       border: "border-[#E5844A]",
       shadow: "shadow-[0px_0px_32px_0px_#FFD2B7]",
     },
     {
-      title: "Hidden Fee Detector",
-      desc: "Instantly spots non-compliant fees, fake taxes, and duplicate charges.",
+      title: t("home.feature2.title"),
+      desc: t("home.feature2.desc"),
       img: "/assets/img/feature/feature2.png",
       border: "border-[#6A40AC]",
       shadow: "shadow-[0px_0px_32px_0px_#D8C0FF]",
     },
     {
-      title: "50-State Legal Check",
-      desc: "Validates all fees against real-time local laws (Powered by CarBuyInsight™).",
+      title: t("home.feature3.title"),
+      desc: t("home.feature3.desc"),
       img: "/assets/img/feature/feature3.png",
       border: "border-[#489F74]",
       shadow: "shadow-[0px_0px_32px_0px_#30B37236]",
     },
     {
-      title: "Real-Time Negotiation Coach",
-      desc: "Get the exact AI-generated script to decline fees and win.",
+      title: t("home.feature4.title"),
+      desc: t("home.feature4.desc"),
       img: "/assets/img/feature/feature4.png",
       border: "border-[#2577D6]",
       shadow: "shadow-[0px_0px_32px_0px_#D3E7FF]",
@@ -57,35 +60,33 @@ export default function Banner() {
   const blogs = [
     {
       img: "/assets/img/blog/blog1.png",
-      category: "SCAMS",
-      time: "5 min read",
-      title: "The Dirty Dozen: 12 Hidden Fees Car Dealers Hope You Miss",
-      desc: "You’ve spent weeks researching the perfect car. You’ve test-driven it and agreed on the monthly payment. But at the signing desk,SignSpark AI protects you by exposing hidden junk fees buried in your contract’s fine print—before you sign.",
-      link: "/blog1",
+      category: t("blog.category.scams"),
+      time: `5 ${t("blog.minReadShort")}`,
+      title: t("home.blog.card1.title"),
+      desc: t("home.blog.card1.desc"),
+      link: "/blog/dirty-dozen-hidden-fees",
       color: "green",
-      btn: "Read Guide →",
+      btn: t("home.blog.readGuide"),
     },
     {
       img: "/assets/img/blog/blog2.png",
-      category: "NEGOTIATION",
-      time: "7 min read",
-      title:
-        "Stop Asking, Start Negotiating: How AI Scripts Saved One Buyer $2,400",
-      desc: "A real-world case study showing how specific AI-generated trigger phrases from SignSpark transformed a moderate deal into a great one—saving the buyer $2,400.",
-      link: "blog2",
+      category: t("blog.category.negotiation"),
+      time: `7 ${t("blog.minReadShort")}`,
+      title: t("home.blog.card2.title"),
+      desc: t("home.blog.card2.desc"),
+      link: "/blog/ai-scripts-saved-2400",
       color: "green",
-      btn: "See the Scripts →",
+      btn: t("home.blog.seeScripts"),
     },
     {
       img: "/assets/img/blog/blog03.png",
-      category: "NEGOTIATION",
-      time: "4 min read",
-      title:
-        "The Silent Sign-Off: How Digital Dealerships Can Hide Hidden Fees",
-      desc: "Imagine buying a new car. You've negotiated the price, picked your color, and now you're in the finance office, ready to seal the deal.",
-      link: "blog3",
+      category: t("blog.category.negotiation"),
+      time: `4 ${t("blog.minReadShort")}`,
+      title: t("home.blog.card3.title"),
+      desc: t("home.blog.card3.desc"),
+      link: "/blog/msrp-myth",
       color: "green",
-      btn: "Read Guide →",
+      btn: t("home.blog.readMore"),
     },
   ];
 
@@ -93,39 +94,33 @@ export default function Banner() {
   const faqs = [
     {
       id: "01",
-      question: "Will the dealership get mad if I use this?",
-      answer:
-        "Transparency isn't rude; it's smart. Our Fairness Report gives you professional, data-backed facts so you can ask confident questions without being aggressive. Most users find dealers back down quickly when shown the data.",
+      question: t("home.faq.q1"),
+      answer: t("home.faq.a1"),
     },
     {
       id: "02",
-      question: "How much money can I actually save?",
-      answer:
-        "On average, users save between $1,500 and $4,000 on their vehicle purchase. The exact amount depends on the make, model, and current market conditions in your area.",
+      question: t("home.faq.q2"),
+      answer: t("home.faq.a2"),
     },
     {
       id: "03",
-      question: "Is my contract data 100% private?",
-      answer:
-        "Absolutely. Your data is encrypted end-to-end and never shared with third parties, including dealerships. We take your privacy seriously.",
+      question: t("home.faq.q3"),
+      answer: t("home.faq.a3"),
     },
     {
       id: "04",
-      question: "Does this work for Leases and Used Cars?",
-      answer:
-        "Yes! Our platform supports new car purchases, used vehicles, and lease agreements. We analyze all deal types to ensure you get a fair price.",
+      question: t("home.faq.q4"),
+      answer: t("home.faq.a4"),
     },
     {
       id: "05",
-      question: "I'm at the dealership right now. Is it fast enough?",
-      answer:
-        "Yes — results are generated in under 60 seconds. Just upload your contract or enter the deal details and you'll have a full Fairness Report before you sign anything.",
+      question: t("home.faq.q5"),
+      answer: t("home.faq.a5"),
     },
     {
       id: "06",
-      question: "Do I have to pay if my deal is already fair?",
-      answer:
-        "You only pay for the full report if you choose to unlock it. The initial summary showing whether your deal is fair or not is completely free.",
+      question: t("home.faq.q6"),
+      answer: t("home.faq.a6"),
     },
   ];
 
@@ -162,30 +157,26 @@ export default function Banner() {
                     height={20}
                     className="object-contain"
                   />
-                  <span>Buying a car? SignSpark is your AI Negotiator.</span>
+                  <span>{t("home.hero.badge")}</span>
                 </h6>
 
                 <h1 className="text-white text-3xl sm:text-4xl lg:text-[39px] font-bold leading-tight  mt-6">
-                  The Essential AI Companion for Today’s Car Buyer—Because the
-                  real negotiation starts at the signing desk.
+                  {t("home.hero.h1")}
                 </h1>
               </div>
 
               {/* Descriptions */}
               <div className="animate-in fade-in slide-in-from-left-8 duration-700 delay-150">
                 <p className="text-white text-xl sm:text-2xl mt-4">
-                  Don’t sign until you check.
+                  {t("home.hero.line1")}
                 </p>
                 <p className="text-white/90 font-normal text-base sm:text-lg my-3 lg:pr-10">
-                  Scan your dealership paperwork and get real-time contract
-                  analysis against state laws. SignSpark flags hidden fees and
-                  compliance risks — so you can shield your wallet from junk
-                  fees and overcharging.
+                  {t("home.hero.p1")}
                 </p>
                 <p className="text-white font-normal text-lg sm:text-xl my-3">
-                  Optimized for the Finance Office: Most buyers save{" "}
-                  <span className="text-[#D73A00] font-bold">$1,400+</span> at
-                  the signing table — based on real contract analysis.
+                  {t("home.hero.p2.prefix")}{" "}
+                  <span className="text-[#D73A00] font-bold">$1,400+</span>
+                  {` ${t("home.hero.p2.suffix")}`}
                 </p>
               </div>
 
@@ -193,7 +184,7 @@ export default function Banner() {
               <div className="flex flex-col sm:flex-row items-center sm:items-stretch gap-4 mt-6">
                 {/* Coming Soon Button */}
                 <button className="w-full sm:w-auto bg-[#FE5200AB] px-10 py-3 rounded-full text-white font-bold tracking-widest text-sm uppercase transition-all duration-200 hover:opacity-90 active:scale-95 shadow-[0px_3px_14px_0px_#D73A00,0px_3px_2px_0px_#952800]">
-                  Coming Soon
+                  {t("home.hero.comingSoon")}
                 </button>
 
                 {/* See Pro Features Button */}
@@ -202,7 +193,7 @@ export default function Banner() {
                   variant="outline"
                   className="w-full sm:w-auto px-10 py-6 rounded-full text-white font-semibold text-base sm:text-[18px] border-2 border-white/70 bg-white/10 hover:bg-white/20 hover:text-white transition-all"
                 >
-                  <Link href="/pro-features">See Pro Features</Link>
+                  <Link href="/pro-features">{t("home.hero.proFeatures")}</Link>
                 </Button>
               </div>
 
@@ -244,16 +235,16 @@ export default function Banner() {
                 <div className="flex items-center sm:pr-2">
                   <Shield size={20} className="text-[#7ED077]" />
                   <p className="text-white/90 text-sm px-2 m-0">
-                    50 States Covered
+                    {t("home.hero.trust.states")}
                   </p>
                 </div>
 
                 <div className="flex items-center sm:px-4">
                   <FileSearch size={20} className="text-[#FFD469]" />
                   <p className="text-white/90 text-sm px-2 m-0">
-                    Real Contracts{" "}
+                    {t("home.hero.trust.contracts")}{" "}
                     <span className="hidden xl:inline">
-                      (Powered by CarBuyInsight)
+                      {t("home.hero.trust.poweredBy")}
                     </span>
                   </p>
                 </div>
@@ -261,7 +252,7 @@ export default function Banner() {
                 <div className="flex items-center sm:pl-4">
                   <FaLock size={20} className="text-[#FFD469]" />
                   <p className="text-white/90 text-sm px-2 m-0">
-                    No Data Ever Shared
+                    {t("home.hero.trust.noDataShared")}
                   </p>
                 </div>
               </div>
@@ -294,7 +285,7 @@ export default function Banner() {
                   <div className="w-full p-[15px] bg-[#7D6EDA30] flex items-center justify-center rounded-[10px]">
                     <Image
                       src="/assets/img/about/feature-icon1.png"
-                      alt="AI Feature Icon"
+                      alt={t("home.featureTop.iconAlt")}
                       width={50}
                       height={50}
                       className="object-contain"
@@ -305,16 +296,15 @@ export default function Banner() {
                 {/* Left Feature Text (Replaces col-sm-9) */}
                 <div className="w-full sm:w-3/4 text-center sm:text-left">
                   <h5 className="text-[16px] text-[#544898] font-bold mb-2">
-                    AI That Keeps Your Deal Fair
+                    {t("home.featureTop.title")}
                   </h5>
                   <p className="text-[#869BB2] text-justify sm:text-left lg:border-r-2 border-[#D0DAE3] lg:pr-2 mt-1">
-                    Our intelligent system reviews your contract to uncover
-                    hidden fees,{" "}
+                    {t("home.featureTop.desc.before")}{" "}
                     <span className="text-[#544898]">
                       {" "}
-                      built on state-specific fee rules{" "}
+                      {t("home.featureTop.desc.highlight")}{" "}
                     </span>{" "}
-                    and ensure transparency — before you sign.
+                    {t("home.featureTop.desc.after")}
                   </p>
                 </div>
               </div>
@@ -329,14 +319,14 @@ export default function Banner() {
                   <div className="bg-[#7D6EDA30] w-[70px] h-[70px] flex justify-center items-center rounded-full mb-[10px]">
                     <Image
                       src="/assets/img/about/feature-icon2.png"
-                      alt="100% Private & Secure"
+                      alt={t("home.featureTop.pill1Alt")}
                       width={35}
                       height={35}
                       className="object-contain"
                     />
                   </div>
                   <h5 className="text-[14px] text-[#544898] font-semibold">
-                    100% Private & Secure
+                    {t("home.featureTop.pill1")}
                   </h5>
                 </div>
 
@@ -345,14 +335,14 @@ export default function Banner() {
                   <div className="bg-[#7D6EDA30] w-[70px] h-[70px] flex justify-center items-center rounded-full mb-[10px]">
                     <Image
                       src="/assets/img/about/feature-icon3.png"
-                      alt="Instant Analysis"
+                      alt={t("home.featureTop.pill2Alt")}
                       width={35}
                       height={35}
                       className="object-contain"
                     />
                   </div>
                   <h5 className="text-[16px] text-[#544898] font-bold">
-                    Instant Analysis
+                    {t("home.featureTop.pill2")}
                   </h5>
                 </div>
 
@@ -361,14 +351,14 @@ export default function Banner() {
                   <div className="bg-[#7D6EDA30] w-[70px] h-[70px] flex justify-center items-center rounded-full mb-[10px]">
                     <Image
                       src="/assets/img/about/feature-icon4.png"
-                      alt="Built to Protect Car Buyers"
+                      alt={t("home.featureTop.pill3Alt")}
                       width={35}
                       height={35}
                       className="object-contain"
                     />
                   </div>
                   <h5 className="text-[16px] text-[#544898] font-bold ">
-                    Built to Protect Car Buyers
+                    {t("home.featureTop.pill3")}
                   </h5>
                 </div>
               </div>
@@ -388,30 +378,26 @@ export default function Banner() {
             <div className="flex flex-col gap-4">
               {/* Label */}
               <p className="text-lg font-bold tracking-widest uppercase text-[#5C2CC6]">
-                About SignSpark AI
+                {t("home.about.kicker")}
               </p>
 
               {/* Heading */}
               <h2 className="text-4xl sm:text-[44px] font-extrabold text-black leading-tight">
-                We Level The{" "}
-                <span className="text-[#5C2CC6]">Playing Field.</span>
+                {t("home.about.title.prefix")}{" "}
+                <span className="text-[#5C2CC6]">
+                  {t("home.about.title.accent")}
+                </span>
               </h2>
 
               {/* Body paragraphs */}
               <p className="text-[#5A5A5A] text-lg leading-relaxed">
-                For too long, the car-buying process has been designed to
-                confuse consumers. Dealerships have the experience; you have the
-                confusion.
+                {t("home.about.p1")}
               </p>
               <p className="text-black text-lg leading-relaxed font-medium">
-                We built SignSpark to change that. By combining state-specific
-                laws with the proprietary data from CarBuyInsight.org, we turn
-                complex contracts into clear, undeniable facts.
+                {t("home.about.p2")}
               </p>
               <p className="text-[#5A5A5A] text-lg leading-relaxed">
-                We don't just scan paper; we give you the leverage to say "No"
-                to junk fees. Our AI is your pocket expert, ensuring clarity
-                when it matters most: before you sign.
+                {t("home.about.p3")}
               </p>
 
               {/* Feature pills */}
@@ -423,10 +409,10 @@ export default function Banner() {
                   />
                   <div>
                     <p className="font-bold text-black text-lg">
-                      Data-Driven Leverage
+                      {t("home.about.pill1.title")}
                     </p>
                     <p className="text-black text-sm mt-0.5">
-                      Built on the nation's largest consumer contract database.
+                      {t("home.about.pill1.desc")}
                     </p>
                   </div>
                 </div>
@@ -436,10 +422,11 @@ export default function Banner() {
                     size={20}
                   />
                   <div>
-                    <p className="font-bold text-black text-lg">Legal Shield</p>
+                    <p className="font-bold text-black text-lg">
+                      {t("home.about.pill2.title")}
+                    </p>
                     <p className="text-black text-sm mt-0.5">
-                      Designed alongside federal and state protection
-                      guidelines.
+                      {t("home.about.pill2.desc")}
                     </p>
                   </div>
                 </div>
@@ -452,13 +439,13 @@ export default function Banner() {
               <div className="flex items-start justify-between">
                 <div>
                   <p className="text-lg text-[#9A9A9A] font-medium mb-1">
-                    Why it matters
+                    {t("home.about.card.kicker")}
                   </p>
                   <h3 className="text-2xl font-extrabold text-black">
-                    Proof you can feel.
+                    {t("home.about.card.title")}
                   </h3>
                   <p className="text-sm text-[#9A9A9A] mt-1">
-                    A lighter, transparent experience—built for consumer trust.
+                    {t("home.about.card.subtitle")}
                   </p>
                 </div>
                 <div className="bg-purple-100 rounded-xl p-3 shrink-0">
@@ -474,7 +461,9 @@ bg-[linear-gradient(180deg,rgba(187,118,219,0.2)_0%,rgba(255,255,255,0.2)_100%)]
 shadow-[0px_1px_5px_0px_#00000040]"
                 >
                   <p className="text-2xl font-extrabold text-slate-900">100%</p>
-                  <p className="text-lg text-[#5A5757] mt-1">Accuracy</p>
+                  <p className="text-lg text-[#5A5757] mt-1">
+                    {t("home.about.card.stat.accuracy")}
+                  </p>
                 </div>
                 <div
                   className="rounded-xl border border-purple-100 p-4 text-center 
@@ -482,7 +471,9 @@ shadow-[0px_1px_5px_0px_#00000040]"
   shadow-[0px_1px_5px_0px_#00000040]"
                 >
                   <p className="text-2xl font-extrabold text-slate-900">50</p>
-                  <p className="text-lg text-[#5A5757] mt-1">States Covered</p>
+                  <p className="text-lg text-[#5A5757] mt-1">
+                    {t("home.about.card.stat.states")}
+                  </p>
                 </div>
 
                 <div
@@ -491,7 +482,9 @@ shadow-[0px_1px_5px_0px_#00000040]"
   shadow-[0px_1px_5px_0px_#00000040]"
                 >
                   <p className="text-2xl font-extrabold text-slate-900">100%</p>
-                  <p className="text-lg text-[#5A5757] mt-1">Private</p>
+                  <p className="text-lg text-[#5A5757] mt-1">
+                    {t("home.about.card.stat.private")}
+                  </p>
                 </div>
               </div>
 
@@ -504,11 +497,10 @@ shadow-[0px_1px_5px_0px_#00000040]"
                   </div>
                   <div>
                     <p className="font-bold text-black text-sm">
-                      Built for Transparency
+                      {t("home.about.card.row1.title")}
                     </p>
                     <p className="text-black text-sm mt-0.5 leading-relaxed">
-                      Our AI surfaces what matters most—fees, compliance risks,
-                      and unfair terms—so you can make clear decisions.
+                      {t("home.about.card.row1.desc")}
                     </p>
                   </div>
                 </div>
@@ -520,11 +512,10 @@ shadow-[0px_1px_5px_0px_#00000040]"
                   </div>
                   <div>
                     <p className="font-bold text-black text-sm">
-                      Plus Jakarta Sans
+                      {t("home.about.card.row2.title")}
                     </p>
                     <p className="text-black text-sm mt-0.5 leading-relaxed">
-                      Get a clear summary of what to negotiate—so you can act
-                      quickly at the signing table.
+                      {t("home.about.card.row2.desc")}
                     </p>
                   </div>
                 </div>
@@ -539,18 +530,18 @@ shadow-[0px_1px_5px_0px_#00000040]"
         <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-4 text-center">
           {/* Label */}
           <p className="text-lg font-semibold tracking-widest text-[#5C2CC6] uppercase">
-            OUR MISSION
+            {t("home.mission.kicker")}
           </p>
 
           {/* Heading */}
           <h2 className="mt-4 text-4xl md:text-5xl font-extrabold text-black">
-            WE ENGINEER <span className="text-[#5C2CC6]">FAIRNESS.</span>
+            {t("home.mission.title.prefix")}{" "}
+            <span className="text-[#5C2CC6]">{t("home.mission.title.accent")}</span>
           </h2>
 
           {/* Subtitle */}
           <p className="mt-4 text-[#5A5A5A] text-lg mx-auto">
-            The system is rigged to confuse you. We built the intelligence to
-            fight back.
+            {t("home.mission.subtitle")}
           </p>
 
           {/* Cards */}
@@ -563,13 +554,11 @@ shadow-[0px_1px_5px_0px_#00000040]"
                 </div>
 
                 <h3 className="font-semibold text-lg text-gray-900">
-                  Unbiased Advocacy
+                  {t("home.mission.card1.title")}
                 </h3>
 
                 <p className="text-[#5A5A5A] mt-2 text-lg leading-relaxed">
-                  We don't work for dealerships. Our AI is programmed to serve
-                  only your financial interests, detecting terms that favor the
-                  seller over the buyer.
+                  {t("home.mission.card1.desc")}
                 </p>
               </CardContent>
             </Card>
@@ -582,13 +571,11 @@ shadow-[0px_1px_5px_0px_#00000040]"
                 </div>
 
                 <h3 className="font-semibold text-lg text-gray-900">
-                  Real-Time Defense
+                  {t("home.mission.card2.title")}
                 </h3>
 
                 <p className="text-[#5A5A5A] mt-2 text-lg leading-relaxed">
-                  Stop predatory tactics before they start. We flag "junk" fees
-                  and inflated add-ons instantly, giving you the leverage to say
-                  No.
+                  {t("home.mission.card2.desc")}
                 </p>
               </CardContent>
             </Card>
@@ -601,13 +588,11 @@ shadow-[0px_1px_5px_0px_#00000040]"
                 </div>
 
                 <h3 className="font-semibold text-lg text-gray-900">
-                  Data-Driven Leverage
+                  {t("home.mission.card3.title")}
                 </h3>
 
                 <p className="text-[#5A5A5A] mt-2 text-lg leading-relaxed">
-                  Powered by CarBuyInsight™, our algorithms compare your deal
-                  against thousands of others to ensure you never pay above
-                  market standards.
+                  {t("home.mission.card3.desc")}
                 </p>
               </CardContent>
             </Card>
@@ -621,17 +606,19 @@ shadow-[0px_1px_5px_0px_#00000040]"
           {/* Section Title */}
           <div className="text-center mb-16 max-w-2xl mx-auto">
             <p className="text-lg font-semibold tracking-widest text-[#5C2CC6] uppercase">
-              Key Features
+              {t("home.features.kicker")}
             </p>
 
             <h2 className="text-4xl font-extrabold mt-3 text-slate-900">
-              The Ultimate Car{" "}
-              <span className="text-[#5C2CC6]">Buying Toolkit</span> .
+              {t("home.features.title.prefix")}{" "}
+              <span className="text-[#5C2CC6]">
+                {t("home.features.title.accent")}
+              </span>
+              .
             </h2>
 
             <p className="text-gray-500 mt-4 text-lg">
-              Smart features built to bring you clarity, confidence, and comfort
-              before you sign.
+              {t("home.features.subtitle")}
             </p>
           </div>
 
@@ -676,17 +663,16 @@ shadow-[0px_1px_5px_0px_#00000040]"
           {/* Section Title */}
           <div className="text-center max-w-3xl mx-auto mb-14">
             <p className="text-lg font-semibold tracking-widest text-[#5C2CC6] uppercase">
-              How It Works
+              {t("home.work.kicker")}
             </p>
 
             <h2 className="text-4xl font-extrabold text-black mt-3">
-              Understand Your Deal in{" "}
-              <span className="text-[#5C2CC6]">3 Simple Steps</span>
+              {t("home.work.title.prefix")}{" "}
+              <span className="text-[#5C2CC6]">{t("home.work.title.accent")}</span>
             </h2>
 
             <p className="text-[#5A5A5A] mt-4 text-lg">
-              Our intelligent system reviews your contract to uncover hidden
-              fees and ensure transparency — before you sign.
+              {t("home.work.subtitle")}
             </p>
           </div>
 
@@ -709,7 +695,7 @@ shadow-[0px_1px_5px_0px_#00000040]"
   bg-[linear-gradient(180deg,#A27AFF_25.58%,#4117A1_87.79%)] 
   bg-clip-text text-transparent"
               >
-                COMING SOON
+                {t("home.work.comingSoon")}
               </p>
 
               <img
@@ -734,12 +720,12 @@ shadow-[0px_1px_5px_0px_#00000040]"
           >
             {/* Heading */}
             <h2 className="text-3xl sm:text-5xl font-bold text-white tracking-tight">
-              Stop guessing. Start saving.
+              {t("home.cta.title")}
             </h2>
 
             {/* Subtext */}
             <p className="mt-3 text-lg  text-[#BFBFBF] font-light">
-              Upload your contract now for an instant fairness check.
+              {t("home.cta.subtitle")}
             </p>
 
             {/* Coming Soon */}
@@ -748,7 +734,7 @@ shadow-[0px_1px_5px_0px_#00000040]"
   bg-[linear-gradient(180deg,#EAEAEA_25.58%,#979797_87.79%)] 
   bg-clip-text text-transparent"
             >
-              Coming Soon
+              {t("home.cta.comingSoon")}
             </p>
 
             {/* App Store Badges */}
@@ -760,7 +746,7 @@ shadow-[0px_1px_5px_0px_#00000040]"
 
                 <div className="text-left">
                   <p className="text-white/60 text-[12px] leading-none">
-                    Download on the
+                    {t("home.cta.downloadOn")}
                   </p>
                   <p className="text-white text-lg font-semibold leading-tight">
                     App Store
@@ -775,7 +761,7 @@ shadow-[0px_1px_5px_0px_#00000040]"
 
                 <div className="text-left">
                   <p className="text-white/60 text-[12px] leading-none">
-                    GET IT ON
+                    {t("home.cta.getItOn")}
                   </p>
                   <p className="text-white text-lg font-semibold leading-tight">
                     Google Play
@@ -793,17 +779,16 @@ shadow-[0px_1px_5px_0px_#00000040]"
           {/* Section Title */}
           <div className="text-center max-w-2xl mx-auto mb-16">
             <p className="text-lg font-semibold tracking-widest text-[#5C2CC6] uppercase">
-              Blogs
+              {t("home.blog.kicker")}
             </p>
 
             <h2 className="text-4xl font-extrabold text-black mt-3">
-              Expert Insights &{" "}
-              <span className="text-[#5C2CC6]">Saving Strategies</span>
+              {t("home.blog.title.prefix")}{" "}
+              <span className="text-[#5C2CC6]">{t("home.blog.title.accent")}</span>
             </h2>
 
             <p className="text-[#5A5A5A] mt-4 text-lg">
-              Don’t just buy a car. Master the deal. Practical advice from
-              negotiation experts and data scientists.
+              {t("home.blog.subtitle")}
             </p>
           </div>
 
@@ -871,13 +856,13 @@ shadow-[0px_1px_5px_0px_#00000040]"
         <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-4">
           {/* Header */}
           <p className="text-lg font-semibold tracking-widest text-[#544898] uppercase mb-3">
-            FAQ&apos;s
+            {t("home.faq.kicker")}
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-black mb-3">
-            Frequently <span className="text-[#663AD0]">Asked Questions</span>
+            {t("home.faq.title")}
           </h2>
           <p className="text-[#272727] mb-10 text-lg">
-            Get the answers you need to negotiate with confidence.
+            {t("home.faq.subtitle")}
           </p>
 
           {/* Content Grid */}
@@ -952,7 +937,7 @@ shadow-[0px_1px_5px_0px_#00000040]"
             <div className="lg:w-72 xl:w-100 flex-shrink-0">
               <div className="rounded-2xl bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-500 p-8 flex flex-col items-center text-center text-white ">
                 <h3 className="text-2xl font-semibold mb-5">
-                  Have a Question?
+                  {t("home.faq.haveQuestion")}
                 </h3>
                 <button
                   onClick={() => setOpen(true)}
@@ -963,10 +948,10 @@ shadow-[0px_1px_5px_0px_#00000040]"
                     alt="Logo"
                     className="h-8 w-auto"
                   />
-                  Contact Us
+                  {t("home.faq.contactUs")}
                 </button>
                 <p className="mt-4 text-white text-lg">
-                  Instant answer. Human backup available.
+                  {t("home.faq.instantAnswer")}
                 </p>
               </div>
             </div>

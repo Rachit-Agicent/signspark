@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   FaTwitter,
   FaFacebook,
@@ -10,27 +11,31 @@ import {
   FaLock,
 } from "react-icons/fa";
 import ContactModal from "./ContactModal";
+import { useI18n } from "@/lib/i18n/I18nProvider";
 
 const productLinks = [
-  { label: "Free Fairness Scan", href: "/#home" },
-  { label: "SignSpark Pro", href: "/#feature" },
-  { label: "How it works", href: "/#work" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "About Us", href: "/#about" },
+  { key: "footer.product.freeScan", href: "/#home" },
+  { key: "footer.product.pro", href: "/#feature" },
+  { key: "footer.product.howItWorks", href: "/#work" },
+  { key: "footer.product.faq", href: "/#faq" },
+  { key: "footer.product.about", href: "/#about" },
 ];
 
 const resourceLinks = [
-  { label: "Car Buying Guide", href: "/blog1" },
-  { label: "Negotiation Scripts", href: "/blog2" },
+  { key: "footer.resources.guide", href: "/blog/dirty-dozen-hidden-fees" },
+  { key: "footer.resources.scripts", href: "/blog/ai-scripts-saved-2400" },
 ];
 
 const legalLinks = [
-  { label: "Privacy Policy", href: "/privacy-policy" },
-  { label: "Terms & Conditions", href: "/terms-conditions" },
-  { label: "Data Security", href: "/data-security" },
+  { key: "footer.legal.privacy", href: "/privacy-policy" },
+  { key: "footer.legal.terms", href: "/terms-conditions" },
+  { key: "footer.legal.security", href: "/data-security" },
 ];
 
 export default function Footer() {
+  const { t } = useI18n();
+  const router = useRouter();
+
   // Modal
   const [open, setOpen] = useState(false);
 
@@ -54,27 +59,31 @@ export default function Footer() {
               {/* Tagline */}
               <div>
                 <p className="text-xl font-bold text-white">
-                  Spark Clarity Before you sign
+                  {t("footer.tagline.title")}
                 </p>
                 <p className="text-lg text-[#EDEDED] mt-2 leading-relaxed">
-                  Building trust in car buying by empowering buyers with
-                  AI-powered contract clarity, fee fairness insights, and
-                  negotiation guidance—before signing.
+                  {t("footer.tagline.desc")}
                 </p>
               </div>
             </div>
 
             {/* Product links */}
             <div className="flex flex-col gap-4">
-              <p className="text-xl font-semibold text-white">Product</p>
+              <p className="text-xl font-semibold text-white">
+                {t("footer.product")}
+              </p>
               <ul className="flex flex-col gap-3">
                 {productLinks.map((link) => (
-                  <li key={link.label}>
+                  <li key={link.key}>
                     <Link
                       href={link.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        router.push(link.href);
+                      }}
                       className="text-lg text-[#EDEDED] hover:text-white transition-colors"
                     >
-                      {link.label}
+                      {t(link.key)}
                     </Link>
                   </li>
                 ))}
@@ -83,15 +92,21 @@ export default function Footer() {
 
             {/* Resources links */}
             <div className="flex flex-col gap-4">
-              <p className="text-xl font-semibold text-white">Resources</p>
+              <p className="text-xl font-semibold text-white">
+                {t("footer.resources")}
+              </p>
               <ul className="flex flex-col gap-3">
                 {resourceLinks.map((link) => (
-                  <li key={link.label}>
+                  <li key={link.key}>
                     <Link
                       href={link.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        router.push(link.href);
+                      }}
                       className="text-lg text-[#EDEDED] hover:text-white transition-colors"
                     >
-                      {link.label}
+                      {t(link.key)}
                     </Link>
                   </li>
                 ))}
@@ -99,22 +114,28 @@ export default function Footer() {
                   onClick={() => setOpen(true)}
                   className="text-lg text-[#EDEDED] hover:text-white transition-colors cursor-pointer"
                 >
-                  Contact Support
+                  {t("footer.contactSupport")}
                 </li>
               </ul>
             </div>
 
             {/* Legal links */}
             <div className="flex flex-col gap-4">
-              <p className="text-xl font-semibold text-white">Legal</p>
+              <p className="text-xl font-semibold text-white">
+                {t("footer.legal")}
+              </p>
               <ul className="flex flex-col gap-3">
                 {legalLinks.map((link) => (
-                  <li key={link.label}>
+                  <li key={link.key}>
                     <Link
                       href={link.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        router.push(link.href);
+                      }}
                       className="text-lg text-[#EDEDED] hover:text-white transition-colors"
                     >
-                      {link.label}
+                      {t(link.key)}
                     </Link>
                   </li>
                 ))}
@@ -139,7 +160,7 @@ export default function Footer() {
               </Link>
             </div>
             <p className="text-lg text-white mt-2">
-              Powered by Community Data from{" "}
+              {t("footer.poweredBy")}{" "}
               <Link
                 href="https://carbuyinsight.org/"
                 target="_blank"
@@ -158,13 +179,13 @@ export default function Footer() {
             <div className="flex items-center gap-2 border border-white/20 rounded-full px-4 py-2">
               <FaLock size={15} className="text-[#5B2DC5]" />
               <span className="text-lg text-slate-300">
-                256-Bit Bank Level Encryption
+                {t("footer.encryption")}
               </span>
             </div>
 
             {/* Copyright */}
             <p className="text-lg text-white">
-              © 2026 SignSpark AI. All rights reserved.
+              {t("footer.copyright")}
             </p>
           </div>
         </div>

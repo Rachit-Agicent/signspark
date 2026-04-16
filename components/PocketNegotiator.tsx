@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { FaApple, FaGooglePlay, FaLock } from "react-icons/fa";
+import { FaApple, FaGooglePlay } from "react-icons/fa";
 import {
   ScanLine,
   TrendingUp,
@@ -10,30 +10,33 @@ import {
   ShieldCheck,
   MapPin,
 } from "lucide-react";
+import { useI18n } from "@/lib/i18n/I18nProvider";
 
-
-const steps = [
-  {
-    id: 0,
-    label: "Scan Contracts in Seconds",
-    icon: ScanLine,
-    image: "/assets/img/app/app01.png",
-  },
-  {
-    id: 1,
-    label: "Get a Fairness Score Instantly",
-    icon: TrendingUp,
-    image: "/assets/img/app/app02.png",
-  },
-  {
-    id: 2,
-    label: "Know Exactly What to Negotiate",
-    icon: Handshake,
-    image: "/assets/img/app/app03.png",
-  },
-];
 
 export default function PocketNegotiator() {
+  const { t } = useI18n();
+
+  const steps = [
+    {
+      id: 0,
+      label: t("pocket.step1"),
+      icon: ScanLine,
+      image: "/assets/img/app/app01.png",
+    },
+    {
+      id: 1,
+      label: t("pocket.step2"),
+      icon: TrendingUp,
+      image: "/assets/img/app/app02.png",
+    },
+    {
+      id: 2,
+      label: t("pocket.step3"),
+      icon: Handshake,
+      image: "/assets/img/app/app03.png",
+    },
+  ];
+
   // Negotiator
   const [phase, setPhase] = useState<"intro" | "tabs">("intro");
   const [activeTab, setActiveTab] = useState(0);
@@ -64,12 +67,13 @@ export default function PocketNegotiator() {
         <div>
           <div className="block lg:hidden mb-6">
             <p className="text-lg font-semibold  text-[#5C2CC6] uppercase">
-              Negotiate with Confidence
+              {t("pocket.kicker")}
             </p>
 
             {/* Heading */}
             <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
-              Your Pocket <span className="text-[#5C2CC6]">Negotiator.</span>
+              {t("pocket.titlePrefix")}{" "}
+              <span className="text-[#5C2CC6]">{t("pocket.titleAccent")}</span>
             </h1>
           </div>
           <div className="flex justify-center relative">
@@ -89,19 +93,19 @@ export default function PocketNegotiator() {
         <div className="flex flex-col gap-3">
           <div className="hidden lg:block mb-6">
             <p className="text-lg font-semibold  text-[#5C2CC6] uppercase">
-              Negotiate with Confidence
+              {t("pocket.kicker")}
             </p>
 
             {/* Heading */}
             <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
-              Your Pocket <span className="text-[#5C2CC6]">Negotiator.</span>
+              {t("pocket.titlePrefix")}{" "}
+              <span className="text-[#5C2CC6]">{t("pocket.titleAccent")}</span>
             </h1>
           </div>
 
           {/* Description */}
           <p className="text-[#5A5A5A] text-lg leading-relaxed">
-            Arm yourself with real-time AI analysis. Scan contracts, spot hidden
-            fees, and negotiate with confidence—right at the dealership desk.
+            {t("pocket.desc")}
           </p>
 
           {/* Steps */}
@@ -148,11 +152,11 @@ export default function PocketNegotiator() {
           {/* Buttons */}
           <div className="flex flex-wrap gap-3 mt-5">
             <button className="flex items-center gap-2 bg-[#5B2DC5]  text-white px-5 py-3 rounded-xl text-lg transition-all active:scale-95 shadow-md shadow-violet-200">
-              <FaApple className="text-3xl" /> App Store
+              <FaApple className="text-3xl" /> {t("pocket.appStore")}
             </button>
             <button className="flex items-center gap-2 bg-[#5B2DC5]  text-white  px-5 py-3 rounded-xl text-lg transition-all active:scale-95 shadow-md shadow-violet-200">
               <FaGooglePlay className="text-3xl" />
-              Play Store
+              {t("pocket.playStore")}
             </button>
           </div>
 
@@ -160,11 +164,11 @@ export default function PocketNegotiator() {
           <div className="flex flex-col gap-1.5 mt-4">
             <p className="flex items-center gap-2 text-sm text-[#757474]">
               <ShieldCheck size={13} className="text-[#00C247]" />
-              100% Secure &amp; Private. Your data is never shared.
+              {t("pocket.trust1")}
             </p>
             <p className="flex items-center gap-2 text-sm text-[#757474]">
               <MapPin size={13} className="text-[#5B2DC5]" />
-              Helping car buyers across all 50 states.
+              {t("pocket.trust2")}
             </p>
           </div>
         </div>

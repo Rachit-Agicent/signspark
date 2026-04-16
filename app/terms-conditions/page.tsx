@@ -1,6 +1,8 @@
 "use client";
+import { useI18n } from "@/lib/i18n/I18nProvider";
 
 export default function TermsConditionsPage() {
+  const { lang } = useI18n();
   return (
     <main className="bg-white mt-20">
       <section className="py-16">
@@ -8,7 +10,9 @@ export default function TermsConditionsPage() {
           {/* TITLE */}
           <div className="mb-10">
             <h1 className="text-4xl font-bold mb-4">
-              SignSpark AI Terms of Service
+              {lang === "es"
+                ? "Términos de servicio de SignSpark AI"
+                : "SignSpark AI Terms of Service"}
             </h1>
             <p className="text-gray-500 text-lg">
               Version 1.0 • Effective Date: May 15, 2026 • Last Updated: Feb 11,
@@ -20,23 +24,23 @@ export default function TermsConditionsPage() {
             {/* Section 1 */}
             <div>
               <h2 className="text-2xl font-semibold mb-4">
-                1. Acceptance of Terms
+                {lang === "es"
+                  ? "1. Aceptación de los términos"
+                  : "1. Acceptance of Terms"}
               </h2>
               <p className="mb-4">
-                By accessing or using the SignSpark AI platform ("Service"),
-                accessible via our website or mobile application, you agree to
-                be bound by these Terms of Service ("Terms"). If you disagree
-                with any part of these terms, you may not access the Service.
+                {lang === "es"
+                  ? "Al acceder o utilizar la plataforma de SignSpark AI (“Servicio”), disponible a través de nuestro sitio web o aplicación móvil, aceptas quedar sujeto a estos Términos de servicio (“Términos”). Si no estás de acuerdo con alguna parte de estos términos, no debes acceder al Servicio."
+                  : "By accessing or using the SignSpark AI platform (\"Service\"), accessible via our website or mobile application, you agree to be bound by these Terms of Service (\"Terms\"). If you disagree with any part of these terms, you may not access the Service."}
               </p>
               <div className="bg-amber-50 border border-amber-200 p-4 rounded-lg">
                 <p className="text-amber-800">
                   <strong>
                     "Beta" Notice (Applicable May 15, 2026 – June 15, 2026):
                   </strong>{" "}
-                  During the Beta phase, the Service is provided "AS IS" and "AS
-                  AVAILABLE" for testing purposes. We make no warranties
-                  regarding uptime, accuracy, or data preservation. We reserve
-                  the right to wipe data or reset accounts during this period.
+                  {lang === "es"
+                    ? "Durante la fase Beta, el Servicio se proporciona “TAL CUAL” y “SEGÚN DISPONIBILIDAD” con fines de prueba. No ofrecemos garantías sobre disponibilidad, precisión o preservación de datos. Nos reservamos el derecho de borrar datos o restablecer cuentas durante este período."
+                    : "During the Beta phase, the Service is provided \"AS IS\" and \"AS AVAILABLE\" for testing purposes. We make no warranties regarding uptime, accuracy, or data preservation. We reserve the right to wipe data or reset accounts during this period."}
                 </p>
               </div>
             </div>
@@ -44,34 +48,59 @@ export default function TermsConditionsPage() {
             {/* Section 2 */}
             <div>
               <h2 className="text-2xl font-semibold mb-4">
-                2. Nature of Our Service (Important Disclaimers)
+                {lang === "es"
+                  ? "2. Naturaleza del servicio (avisos importantes)"
+                  : "2. Nature of Our Service (Important Disclaimers)"}
               </h2>
               <p className="mb-4">
-                SignSpark AI is an <strong>informational analysis tool</strong>{" "}
-                designed to assist consumers in understanding automotive
-                contracts. By using this Service, you acknowledge and agree to
-                the following:
+                {lang === "es" ? (
+                  <>
+                    SignSpark AI es una{" "}
+                    <strong>herramienta de análisis informativo</strong> diseñada
+                    para ayudar a los consumidores a comprender contratos
+                    automotrices. Al utilizar este Servicio, reconoces y aceptas
+                    lo siguiente:
+                  </>
+                ) : (
+                  <>
+                    SignSpark AI is an{" "}
+                    <strong>informational analysis tool</strong> designed to
+                    assist consumers in understanding automotive contracts. By
+                    using this Service, you acknowledge and agree to the
+                    following:
+                  </>
+                )}
               </p>
               <ul className="list-disc ml-6 space-y-4">
                 <li>
-                  <strong>We Are Not Lawyers:</strong> SignSpark AI is not a law
-                  firm and does not provide legal advice. The "Contract Audits,"
-                  "Risk Flags," and negotiation scripts are generated by
-                  artificial intelligence based on common patterns. They are for
-                  educational purposes only and are not a substitute for the
-                  advice of an attorney.
+                  <strong>
+                    {lang === "es"
+                      ? "No somos abogados:"
+                      : "We Are Not Lawyers:"}
+                  </strong>{" "}
+                  {lang === "es"
+                    ? "SignSpark AI no es un bufete y no brinda asesoría legal. Las “auditorías de contrato”, “alertas de riesgo” y guiones de negociación se generan mediante inteligencia artificial basada en patrones comunes. Son solo para fines educativos y no sustituyen el consejo de un abogado."
+                    : 'SignSpark AI is not a law firm and does not provide legal advice. The "Contract Audits," "Risk Flags," and negotiation scripts are generated by artificial intelligence based on common patterns. They are for educational purposes only and are not a substitute for the advice of an attorney.'}
                 </li>
                 <li>
-                  <strong>We Are Not Financial Advisors:</strong> The "Fairness
-                  Score" and financial analysis provided are estimates based on
-                  market data. We do not guarantee loan approval, specific
-                  interest rates, or financial savings.
+                  <strong>
+                    {lang === "es"
+                      ? "No somos asesores financieros:"
+                      : "We Are Not Financial Advisors:"}
+                  </strong>{" "}
+                  {lang === "es"
+                    ? "El “puntaje de equidad” y el análisis financiero son estimaciones basadas en datos del mercado. No garantizamos aprobación de préstamo, tasas de interés específicas ni ahorros."
+                    : 'The "Fairness Score" and financial analysis provided are estimates based on market data. We do not guarantee loan approval, specific interest rates, or financial savings.'}
                 </li>
                 <li>
-                  <strong>You Make the Final Decision:</strong> You are solely
-                  responsible for verifying all terms, numbers, and clauses with
-                  the dealership before signing any binding agreement. SignSpark
-                  AI is not a party to your vehicle purchase or lease agreement.
+                  <strong>
+                    {lang === "es"
+                      ? "Tú tomas la decisión final:"
+                      : "You Make the Final Decision:"}
+                  </strong>{" "}
+                  {lang === "es"
+                    ? "Eres el único responsable de verificar todos los términos, cifras y cláusulas con el concesionario antes de firmar cualquier acuerdo vinculante. SignSpark AI no es parte de tu compra o arrendamiento del vehículo."
+                    : "You are solely responsible for verifying all terms, numbers, and clauses with the dealership before signing any binding agreement. SignSpark AI is not a party to your vehicle purchase or lease agreement."}
                 </li>
               </ul>
             </div>
@@ -79,31 +108,53 @@ export default function TermsConditionsPage() {
             {/* Section 3 */}
             <div>
               <h2 className="text-2xl font-semibold mb-4">
-                3. User Accounts and Responsibilities
+                {lang === "es"
+                  ? "3. Cuentas de usuario y responsabilidades"
+                  : "3. User Accounts and Responsibilities"}
               </h2>
               <ul className="list-disc ml-6 space-y-4">
                 <li>
-                  <strong>Account Security:</strong> You are responsible for
-                  safeguarding your login credentials. You must notify us
-                  immediately of any unauthorized use of your account.
+                  <strong>
+                    {lang === "es"
+                      ? "Seguridad de la cuenta:"
+                      : "Account Security:"}
+                  </strong>{" "}
+                  {lang === "es"
+                    ? "Eres responsable de proteger tus credenciales de acceso. Debes notificarnos de inmediato sobre cualquier uso no autorizado de tu cuenta."
+                    : "You are responsible for safeguarding your login credentials. You must notify us immediately of any unauthorized use of your account."}
                 </li>
                 <li>
-                  <strong>Accuracy of Input:</strong> The accuracy of our
-                  analysis depends on the clarity of the documents you upload.
-                  You agree to review the data extracted by our AI (e.g.,
-                  vehicle price, APR) and correct any errors before relying on
-                  the report.
+                  <strong>
+                    {lang === "es"
+                      ? "Precisión de la información:"
+                      : "Accuracy of Input:"}
+                  </strong>{" "}
+                  {lang === "es"
+                    ? "La precisión de nuestro análisis depende de la claridad de los documentos que subas. Aceptas revisar los datos extraídos por nuestra IA (por ejemplo, precio del vehículo, APR) y corregir cualquier error antes de basarte en el informe."
+                    : "The accuracy of our analysis depends on the clarity of the documents you upload. You agree to review the data extracted by our AI (e.g., vehicle price, APR) and correct any errors before relying on the report."}
                 </li>
                 <li>
-                  <strong>Prohibited Use:</strong> You may not use the Service
-                  to:
+                  <strong>
+                    {lang === "es"
+                      ? "Uso prohibido:"
+                      : "Prohibited Use:"}
+                  </strong>{" "}
+                  {lang === "es" ? "No puedes usar el Servicio para:" : "You may not use the Service to:"}
                   <ul className="list-disc ml-8 mt-2 space-y-1">
-                    <li>Analyze contracts for fraudulent purposes.</li>
                     <li>
-                      Upload documents containing illegal content or malware.
+                      {lang === "es"
+                        ? "Analizar contratos con fines fraudulentos."
+                        : "Analyze contracts for fraudulent purposes."}
                     </li>
                     <li>
-                      Reverse engineer or attempt to copy our AI algorithms.
+                      {lang === "es"
+                        ? "Subir documentos que contengan contenido ilegal o malware."
+                        : "Upload documents containing illegal content or malware."}
+                    </li>
+                    <li>
+                      {lang === "es"
+                        ? "Realizar ingeniería inversa o intentar copiar nuestros algoritmos de IA."
+                        : "Reverse engineer or attempt to copy our AI algorithms."}
                     </li>
                   </ul>
                 </li>
@@ -113,28 +164,40 @@ export default function TermsConditionsPage() {
             {/* Section 4 */}
             <div>
               <h2 className="text-2xl font-semibold mb-4">
-                4. Payment and Subscriptions
+                {lang === "es"
+                  ? "4. Pagos y suscripciones"
+                  : "4. Payment and Subscriptions"}
               </h2>
               <ul className="list-disc ml-6 space-y-4">
                 <li>
-                  <strong>Free Tier:</strong> We may offer limited access to
-                  features (e.g., basic scanning) at no cost.
+                  <strong>
+                    {lang === "es" ? "Plan gratuito:" : "Free Tier:"}
+                  </strong>{" "}
+                  {lang === "es"
+                    ? "Podemos ofrecer acceso limitado a funciones (por ejemplo, escaneo básico) sin costo."
+                    : "We may offer limited access to features (e.g., basic scanning) at no cost."}
                 </li>
                 <li>
-                  <strong>Pro Services:</strong> Access to detailed "Fairness
-                  Reports," "Hidden Fee Detection," and advanced negotiation
-                  tools requires a payment (e.g., one-time fee or subscription).
+                  <strong>
+                    {lang === "es" ? "Servicios Pro:" : "Pro Services:"}
+                  </strong>{" "}
+                  {lang === "es"
+                    ? "El acceso a “informes de equidad”, “detección de tarifas ocultas” y herramientas avanzadas de negociación requiere un pago (por ejemplo, pago único o suscripción)."
+                    : 'Access to detailed "Fairness Reports," "Hidden Fee Detection," and advanced negotiation tools requires a payment (e.g., one-time fee or subscription).'}
                 </li>
                 <li>
-                  <strong>Billing:</strong> By selecting a paid service (e.g.,
-                  the $89.99 Pro Upgrade), you authorize us to charge your
-                  designated payment method.
+                  <strong>{lang === "es" ? "Cobro:" : "Billing:"}</strong>{" "}
+                  {lang === "es"
+                    ? "Al seleccionar un servicio de pago (por ejemplo, la mejora Pro de $89.99), nos autorizas a cobrar al método de pago designado."
+                    : "By selecting a paid service (e.g., the $89.99 Pro Upgrade), you authorize us to charge your designated payment method."}
                 </li>
                 <li>
-                  <strong>Refunds:</strong> Due to the digital nature of our
-                  reports, all sales are final once the "Fairness Report" or
-                  analysis has been revealed to you, unless otherwise required
-                  by law.
+                  <strong>
+                    {lang === "es" ? "Reembolsos:" : "Refunds:"}
+                  </strong>{" "}
+                  {lang === "es"
+                    ? "Debido a la naturaleza digital de nuestros informes, todas las ventas son finales una vez que el “informe de equidad” o el análisis se haya mostrado, salvo que la ley exija lo contrario."
+                    : 'Due to the digital nature of our reports, all sales are final once the "Fairness Report" or analysis has been revealed to you, unless otherwise required by law.'}
                 </li>
               </ul>
             </div>
@@ -142,18 +205,24 @@ export default function TermsConditionsPage() {
             {/* Section 5 */}
             <div>
               <h2 className="text-2xl font-semibold mb-4">
-                5. Intellectual Property
+                {lang === "es"
+                  ? "5. Propiedad intelectual"
+                  : "5. Intellectual Property"}
               </h2>
               <ul className="list-disc ml-6 space-y-4">
                 <li>
-                  <strong>Your Data:</strong> You retain all ownership rights to
-                  the documents and personal data you upload ("User Content").
+                  <strong>{lang === "es" ? "Tus datos:" : "Your Data:"}</strong>{" "}
+                  {lang === "es"
+                    ? "Conservas todos los derechos de propiedad sobre los documentos y datos personales que subas (“Contenido del usuario”)."
+                    : 'You retain all ownership rights to the documents and personal data you upload ("User Content").'}
                 </li>
                 <li>
-                  <strong>Our Platform:</strong> SignSpark AI retains all
-                  rights, title, and interest in the Service, including our
-                  proprietary AI models, code, fairness algorithms, and the
-                  "SignSpark" brand.
+                  <strong>
+                    {lang === "es" ? "Nuestra plataforma:" : "Our Platform:"}
+                  </strong>{" "}
+                  {lang === "es"
+                    ? "SignSpark AI conserva todos los derechos, títulos e intereses sobre el Servicio, incluidos nuestros modelos de IA propietarios, código, algoritmos de equidad y la marca “SignSpark”."
+                    : 'SignSpark AI retains all rights, title, and interest in the Service, including our proprietary AI models, code, fairness algorithms, and the "SignSpark" brand.'}
                 </li>
               </ul>
             </div>
@@ -161,87 +230,117 @@ export default function TermsConditionsPage() {
             {/* Section 6 */}
             <div>
               <h2 className="text-2xl font-semibold mb-4">
-                6. Privacy and Data Security
+                {lang === "es"
+                  ? "6. Privacidad y seguridad de datos"
+                  : "6. Privacy and Data Security"}
               </h2>
               <p>
-                Your use of the Service is also governed by our{" "}
-                <strong>Privacy Policy</strong>, which explains how we collect,
-                safeguard, and disclose information that results from your use
-                of the Service.
+                {lang === "es" ? (
+                  <>
+                    Tu uso del Servicio también se rige por nuestra{" "}
+                    <strong>Política de privacidad</strong>, que explica cómo
+                    recopilamos, protegemos y divulgamos información derivada de
+                    tu uso del Servicio.
+                  </>
+                ) : (
+                  <>
+                    Your use of the Service is also governed by our{" "}
+                    <strong>Privacy Policy</strong>, which explains how we
+                    collect, safeguard, and disclose information that results
+                    from your use of the Service.
+                  </>
+                )}
               </p>
             </div>
 
             {/* Section 7 */}
             <div>
               <h2 className="text-2xl font-semibold mb-4">
-                7. Limitation of Liability
+                {lang === "es"
+                  ? "7. Limitación de responsabilidad"
+                  : "7. Limitation of Liability"}
               </h2>
               <p className="mb-4">
-                <strong>READ THIS CAREFULLY:</strong> To the maximum extent
-                permitted by law, SignSpark AI shall not be liable for any
-                indirect, incidental, special, consequential, or punitive
-                damages, including without limitation:
+                <strong>
+                  {lang === "es" ? "LEE ESTO CUIDADOSAMENTE:" : "READ THIS CAREFULLY:"}
+                </strong>{" "}
+                {lang === "es"
+                  ? "En la máxima medida permitida por la ley, SignSpark AI no será responsable por daños indirectos, incidentales, especiales, consecuentes o punitivos, incluidos, entre otros:"
+                  : "To the maximum extent permitted by law, SignSpark AI shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation:"}
               </p>
               <ul className="list-disc ml-6 space-y-3 mb-4">
                 <li>
-                  Financial losses incurred from a bad vehicle purchase or lease
-                  deal.
+                  {lang === "es"
+                    ? "Pérdidas financieras derivadas de una mala compra o arrendamiento."
+                    : "Financial losses incurred from a bad vehicle purchase or lease deal."}
                 </li>
                 <li>
-                  Errors in contract analysis (e.g., the AI failing to detect a
-                  specific fee).
+                  {lang === "es"
+                    ? "Errores en el análisis del contrato (por ejemplo, que la IA no detecte una tarifa específica)."
+                    : "Errors in contract analysis (e.g., the AI failing to detect a specific fee)."}
                 </li>
-                <li>Loss of data or service interruptions.</li>
+                <li>
+                  {lang === "es"
+                    ? "Pérdida de datos o interrupciones del servicio."
+                    : "Loss of data or service interruptions."}
+                </li>
               </ul>
               <p>
-                In no event shall our total liability to you exceed the amount
-                you paid us for the Service (e.g., $89.99) or $100, whichever is
-                greater.
+                {lang === "es"
+                  ? "En ningún caso nuestra responsabilidad total hacia ti excederá el monto que nos hayas pagado por el Servicio (por ejemplo, $89.99) o $100, lo que sea mayor."
+                  : "In no event shall our total liability to you exceed the amount you paid us for the Service (e.g., $89.99) or $100, whichever is greater."}
               </p>
             </div>
 
             {/* Section 8 */}
             <div>
               <h2 className="text-2xl font-semibold mb-4">
-                8. Indemnification
+                {lang === "es"
+                  ? "8. Indemnización"
+                  : "8. Indemnification"}
               </h2>
               <p>
-                You agree to indemnify and hold harmless SignSpark AI, its
-                employees, and partners from any claims, damages, or expenses
-                arising out of your use of the Service or your violation of
-                these Terms.
+                {lang === "es"
+                  ? "Aceptas indemnizar y eximir de responsabilidad a SignSpark AI, sus empleados y socios frente a cualquier reclamo, daño o gasto que surja de tu uso del Servicio o de la violación de estos Términos."
+                  : "You agree to indemnify and hold harmless SignSpark AI, its employees, and partners from any claims, damages, or expenses arising out of your use of the Service or your violation of these Terms."}
               </p>
             </div>
 
             {/* Section 9 */}
             <div>
               <h2 className="text-2xl font-semibold mb-4">
-                9. Changes to Terms
+                {lang === "es"
+                  ? "9. Cambios en los términos"
+                  : "9. Changes to Terms"}
               </h2>
               <p>
-                We reserve the right to modify these Terms at any time. If a
-                revision is material, we will try to provide at least 30 days'
-                notice prior to any new terms taking effect. Your continued use
-                of the Service after those revisions constitutes your agreement
-                to the new terms.
+                {lang === "es"
+                  ? "Nos reservamos el derecho de modificar estos Términos en cualquier momento. Si una revisión es material, intentaremos avisar con al menos 30 días de anticipación antes de que entren en vigor. Tu uso continuado del Servicio después de dichas revisiones constituye tu aceptación de los nuevos términos."
+                  : "We reserve the right to modify these Terms at any time. If a revision is material, we will try to provide at least 30 days' notice prior to any new terms taking effect. Your continued use of the Service after those revisions constitutes your agreement to the new terms."}
               </p>
             </div>
 
             {/* Section 10 */}
             <div>
-              <h2 className="text-2xl font-semibold mb-4">10. Governing Law</h2>
+              <h2 className="text-2xl font-semibold mb-4">
+                {lang === "es" ? "10. Ley aplicable" : "10. Governing Law"}
+              </h2>
               <p>
-                These Terms shall be governed by the laws of the State of New
-                Jersey, without regard to its conflict of law provisions.
+                {lang === "es"
+                  ? "Estos Términos se regirán por las leyes del Estado de New Jersey, sin tener en cuenta sus disposiciones sobre conflicto de leyes."
+                  : "These Terms shall be governed by the laws of the State of New Jersey, without regard to its conflict of law provisions."}
               </p>
             </div>
 
             {/* Section 11 */}
             <div>
-              <h2 className="text-2xl font-semibold mb-4">11. Contact Us</h2>
+              <h2 className="text-2xl font-semibold mb-4">
+                {lang === "es" ? "11. Contáctanos" : "11. Contact Us"}
+              </h2>
               <p className="mb-3">
-                If you have any questions about these Terms, please contact us
-                at:
+                {lang === "es"
+                  ? "Si tienes preguntas sobre estos Términos, contáctanos en:"
+                  : "If you have any questions about these Terms, please contact us at:"}
               </p>
               <p className="font-medium">Email: legal@signspark.com</p>
             </div>

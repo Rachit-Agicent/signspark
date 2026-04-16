@@ -1,8 +1,10 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useI18n } from "@/lib/i18n/I18nProvider";
 
 export default function BlogDetailPage() {
+  const { t, lang } = useI18n();
   return (
     <main className="bg-white">
       {/* HERO IMAGE */}
@@ -24,52 +26,61 @@ export default function BlogDetailPage() {
           {/* TITLE */}
           <div className="mb-6">
             <h1 className="text-4xl font-bold mb-6">
-              The "Dirty Dozen": 12 Hidden Fees Car Dealers Hope You Miss
+              {lang === "es"
+                ? "La “Docena Sucia”: 12 tarifas ocultas que los concesionarios esperan que no veas"
+                : 'The "Dirty Dozen": 12 Hidden Fees Car Dealers Hope You Miss'}
             </h1>
 
             <div className="flex justify-between items-center flex-wrap gap-4">
               <span className="text-green-700 bg-green-100 px-5 py-1 rounded-full text-lg">
-                By SignSpark Editorial Team
+                {t("blog.byTeam")}
               </span>
 
-              <p className="text-gray-500 text-lg">5 Minutes Read Time</p>
+              <p className="text-gray-500 text-lg">
+                5 {t("blog.minutesRead")}
+              </p>
             </div>
           </div>
 
           {/* INTRO */}
           <div className="space-y-4 text-lg text-gray-700 mt-10">
             <p>
-              You’ve spent weeks researching the perfect car. You’ve test-driven
-              it. You’ve even agreed on a monthly payment. Now comes the part
-              everyone dreads: The Finance Office.
+              {lang === "es"
+                ? "Has pasado semanas investigando el auto perfecto. Lo probaste. Incluso acordaste un pago mensual. Ahora llega la parte que todos temen: la oficina de finanzas."
+                : "You’ve spent weeks researching the perfect car. You’ve test-driven it. You’ve even agreed on a monthly payment. Now comes the part everyone dreads: The Finance Office."}
             </p>
 
             <p>
-              This is where the "deal" you shook hands on often falls apart.
+              {lang === "es"
+                ? "Aquí es donde el “trato” que cerraste con un apretón de manos muchas veces se desmorona."
+                : 'This is where the "deal" you shook hands on often falls apart.'}
             </p>
 
             <p>
-              Buried in the fine print of that long, yellow contract are often
-              hundreds—sometimes thousands—of dollars in extra charges. Dealers
-              count on two things: your exhaustion and your confusion. They hope
-              you'll just sign to get it over with.
+              {lang === "es"
+                ? "Enterrados en la letra pequeña de ese contrato largo y amarillo suele haber cientos—y a veces miles—de dólares en cargos extra. Los concesionarios cuentan con dos cosas: tu cansancio y tu confusión. Esperan que firmes para terminar rápido."
+                : "Buried in the fine print of that long, yellow contract are often hundreds—sometimes thousands—of dollars in extra charges. Dealers count on two things: your exhaustion and your confusion. They hope you'll just sign to get it over with."}
             </p>
 
             <p>
-              Don't let them win. Here is the "Dirty Dozen"—the 12 most common
-              hidden fees to watch for, and exactly how to handle them.
+              {lang === "es"
+                ? "No los dejes ganar. Aquí tienes la “Docena Sucia”: las 12 tarifas ocultas más comunes que debes vigilar y exactamente cómo manejarlas."
+                : 'Don\'t let them win. Here is the "Dirty Dozen"—the 12 most common hidden fees to watch for, and exactly how to handle them.'}
             </p>
           </div>
 
           {/* SECTION */}
           <div className="mt-16">
             <h2 className="text-3xl font-semibold mb-6">
-              The "Bogus" Fees (Refuse These Immediately)
+              {lang === "es"
+                ? "Tarifas “falsas” (recházalas de inmediato)"
+                : 'The "Bogus" Fees (Refuse These Immediately)'}
             </h2>
 
             <p className="text-lg text-gray-700 mb-8">
-              These fees offer you zero value. They are pure profit generators
-              for the dealership.
+              {lang === "es"
+                ? "Estas tarifas no te dan ningún valor. Son pura ganancia para el concesionario."
+                : "These fees offer you zero value. They are pure profit generators for the dealership."}
             </p>
 
             <div className="space-y-10">
@@ -79,20 +90,27 @@ export default function BlogDetailPage() {
 
                 <ul className="list-disc ml-6 space-y-2 text-lg text-gray-700">
                   <li>
-                    <strong>The Cost:</strong> $99 – $499
+                    <strong>{lang === "es" ? "Costo:" : "The Cost:"}</strong>{" "}
+                    $99 – $499
                   </li>
                   <li>
-                    <strong>The Pitch:</strong> "It keeps tire pressure stable
-                    better than regular air."
+                    <strong>{lang === "es" ? "El discurso:" : "The Pitch:"}</strong>{" "}
+                    "It keeps tire pressure stable better than regular air."
                   </li>
                   <li>
-                    <strong>The Reality:</strong> The air we breathe is already
-                    78% nitrogen. Paying $200 for green valve caps is one of the
-                    biggest scams in the industry.
+                    <strong>{lang === "es" ? "La realidad:" : "The Reality:"}</strong>{" "}
+                    The air we breathe is already 78% nitrogen. Paying $200 for
+                    green valve caps is one of the biggest scams in the
+                    industry.
                   </li>
                   <li>
-                    <strong>Verdict: REFUSE.</strong> If they say it's "already
-                    on the car," tell them you won't pay for it.
+                    <strong>
+                      {lang === "es"
+                        ? "Veredicto: RECHAZA."
+                        : "Verdict: REFUSE."}
+                    </strong>{" "}
+                    If they say it's "already on the car," tell them you won't
+                    pay for it.
                   </li>
                 </ul>
               </div>
@@ -198,11 +216,14 @@ export default function BlogDetailPage() {
           {/* SECOND SECTION */}
           <div className="mt-16">
             <h2 className="text-3xl font-semibold mb-6">
-              The "Overpriced" Products (Buy Elsewhere)
+              {lang === "es"
+                ? "Productos “sobrevalorados” (cómpralos en otro lugar)"
+                : 'The "Overpriced" Products (Buy Elsewhere)'}
             </h2>
             <p className="text-lg text-gray-700 mb-4">
-              These are real products, but the dealership marks them up by 200%
-              or more.
+              {lang === "es"
+                ? "Son productos reales, pero el concesionario los marca con 200% o más."
+                : "These are real products, but the dealership marks them up by 200% or more."}
             </p>
 
             <div className="space-y-10">
@@ -273,7 +294,9 @@ export default function BlogDetailPage() {
           {/* THIRD SECTION */}
           <div className="mt-16">
             <h2 className="text-3xl font-semibold mb-6">
-              The "Questionable" Admin Fees (Watch Closely)
+              {lang === "es"
+                ? "Tarifas administrativas “cuestionables” (vigílalas de cerca)"
+                : 'The "Questionable" Admin Fees (Watch Closely)'}
             </h2>
 
             <div className="space-y-10">
@@ -392,36 +415,47 @@ export default function BlogDetailPage() {
           {/* FINAL SECTION */}
           <div className="mt-16">
             <h2 className="text-3xl font-semibold mb-6">
-              How to Spot Them Before You Sign
+              {lang === "es"
+                ? "Cómo detectarlas antes de firmar"
+                : "How to Spot Them Before You Sign"}
             </h2>
 
             <p className="text-lg text-gray-700 mb-4">
-              Trying to memorize this list while a finance manager stares at you
-              is stressful. They often hide these fees using acronyms or bundle
-              them into the "Total Cash Price" so you don't notice.
+              {lang === "es"
+                ? "Intentar memorizar esta lista mientras el gerente de finanzas te mira es estresante. A menudo esconden estas tarifas usando siglas o incluyéndolas en el “Total Cash Price” para que no las notes."
+                : 'Trying to memorize this list while a finance manager stares at you is stressful. They often hide these fees using acronyms or bundle them into the "Total Cash Price" so you don\'t notice.'}
             </p>
 
             <p className="text-lg font-semibold mb-4">
-              You don't need to be a lawyer to fight back. You just need
-              SignSpark.
+              {lang === "es"
+                ? "No necesitas ser abogado para defenderte. Solo necesitas SignSpark."
+                : "You don't need to be a lawyer to fight back. You just need SignSpark."}
             </p>
 
             <p className="text-lg font-semibold mb-4">
-              Before you pick up the pen, pick up your phone.
+              {lang === "es"
+                ? "Antes de tomar el bolígrafo, toma tu teléfono."
+                : "Before you pick up the pen, pick up your phone."}
             </p>
 
             <ul className="list-disc ml-6 space-y-2 text-lg text-gray-700 mb-4">
               <li>
-                <strong>Scan:</strong> Take a photo of the contract or purchase
-                order.
+                <strong>{lang === "es" ? "Escanea:" : "Scan:"}</strong>{" "}
+                {lang === "es"
+                  ? "Toma una foto del contrato u orden de compra."
+                  : "Take a photo of the contract or purchase order."}
               </li>
               <li>
-                <strong>Analyze:</strong> SignSpark’s AI reads the fine print
-                instantly.
+                <strong>{lang === "es" ? "Analiza:" : "Analyze:"}</strong>{" "}
+                {lang === "es"
+                  ? "La IA de SignSpark lee la letra pequeña al instante."
+                  : "SignSpark’s AI reads the fine print instantly."}
               </li>
               <li>
-                <strong>Detect:</strong> We flag the "Dirty Dozen" automatically
-                and tell you exactly what to say to remove them.
+                <strong>{lang === "es" ? "Detecta:" : "Detect:"}</strong>{" "}
+                {lang === "es"
+                  ? "Marcamos la “Docena Sucia” automáticamente y te decimos exactamente qué decir para eliminarlas."
+                  : 'We flag the "Dirty Dozen" automatically and tell you exactly what to say to remove them.'}
               </li>
             </ul>
 
