@@ -21,7 +21,6 @@ export const metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,7 +32,6 @@ export default function RootLayout({
     <html lang="en" className={cn("font-sans", geist.variable)}>
       <head></head>
       <body>
-
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-3J6LFT613C"
