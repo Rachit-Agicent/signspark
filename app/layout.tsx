@@ -4,8 +4,8 @@ import "./globals.css";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { I18nProvider } from "@/lib/i18n/I18nProvider";
-import { cookies } from "next/headers";
 import type { Lang } from "@/lib/i18n/messages";
+import Script from "next/script";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -16,21 +16,38 @@ export const metadata = {
   icons: {
     icon: "/assets/img/favicon.svg",
   },
+  verification: {
+    google: "-UhY7F7GJBwmLypzW3huqPSP1QObDEUy8_hPxtYHfWA",
+  },
 };
 
-export default async function RootLayout({
+
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const cookieStore = await cookies();
-  const cookieLang = cookieStore.get("signspark.lang")?.value;
-  const initialLang: Lang = cookieLang === "es" ? "es" : "en";
+  const initialLang: Lang = "en";
 
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
       <head></head>
       <body>
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-3J6LFT613C"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3J6LFT613C');
+          `}
+        </Script>
+
         <I18nProvider initialLang={initialLang}>
           <div className="full-wrap">
             <Header />

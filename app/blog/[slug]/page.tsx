@@ -13,6 +13,10 @@ const BLOG_BY_SLUG: Record<string, React.ComponentType> = {
   "msrp-myth": Blog3Page,
 };
 
+export function generateStaticParams() {
+  return Object.keys(BLOG_BY_SLUG).map((slug) => ({ slug }));
+}
+
 export default async function BlogSlugPage({ params }: Props) {
   const resolved =
     typeof (params as any)?.then === "function" ? await (params as any) : params;
