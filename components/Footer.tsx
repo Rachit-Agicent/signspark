@@ -149,13 +149,25 @@ export default function Footer() {
               <Link href="#" className="text-white transition-colors">
                 <FaTwitter size={25} />
               </Link>
-              <Link href="#" className="text-white transition-colors">
+              <Link
+                href="https://www.facebook.com/Signsparkai/"
+                target="_blank"
+                className="text-white transition-colors"
+              >
                 <FaFacebook size={25} />
               </Link>
-              <Link href="#" className="text-white transition-colors">
+              <Link
+                href="https://www.instagram.com/signspark.ai/"
+                target="_blank"
+                className="text-white transition-colors"
+              >
                 <FaInstagram size={25} />
               </Link>
-              <Link href="#" className="text-white transition-colors">
+              <Link
+                href="https://www.linkedin.com/company/signspark/"
+                target="_blank"
+                className="text-white transition-colors"
+              >
                 <FaLinkedin size={25} />
               </Link>
             </div>
@@ -184,9 +196,7 @@ export default function Footer() {
             </div>
 
             {/* Copyright */}
-            <p className="text-lg text-white">
-              {t("footer.copyright")}
-            </p>
+            <p className="text-lg text-white">{t("footer.copyright")}</p>
           </div>
         </div>
       </footer>
