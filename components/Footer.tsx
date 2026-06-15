@@ -3,13 +3,15 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Script from "next/script";
+import Image from "next/image";
 import {
-  FaTwitter,
+  FaXTwitter,
   FaFacebook,
   FaInstagram,
   FaLinkedin,
   FaLock,
-} from "react-icons/fa";
+} from "react-icons/fa6";
 import ContactModal from "./ContactModal";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 
@@ -146,8 +148,12 @@ export default function Footer() {
           <div className="block sm:flex justify-between mt-5">
             {/* Social icons */}
             <div className="flex items-center gap-4 mt-1">
-              <Link href="#" className="text-white transition-colors">
-                <FaTwitter size={25} />
+              <Link
+                href="https://x.com/Signspark"
+                target="_blank"
+                className="text-white transition-colors"
+              >
+                <FaXTwitter size={25} />
               </Link>
               <Link
                 href="https://www.facebook.com/Signsparkai/"
@@ -170,6 +176,24 @@ export default function Footer() {
               >
                 <FaLinkedin size={25} />
               </Link>
+
+              {/* DMCA badge */}
+              <Link
+                href="https://www.dmca.com/Protection/Status.aspx?ID=3089df9e-388a-4809-be47-38e66f7111db"
+                title="DMCA.com Protection Status"
+                className="dmca-badge"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="https://images.dmca.com/Badges/dmca_protected_sml_120m.png?ID=3089df9e-388a-4809-be47-38e66f7111db"
+                  alt="DMCA.com Protection Status"
+                  width={180}
+                  height={50}
+                />
+              </Link>
+
+              <Script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js" />
             </div>
             <p className="text-lg text-white mt-2">
               {t("footer.poweredBy")}{" "}

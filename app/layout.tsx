@@ -45,7 +45,6 @@ export default function RootLayout({
             gtag('config', 'G-3J6LFT613C');
           `}
         </Script>
-
         <I18nProvider initialLang={initialLang}>
           <div className="full-wrap">
             <Header />
