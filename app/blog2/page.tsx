@@ -12,7 +12,7 @@ export default function BlogDetailPage() {
         <div className="relative h-[30vh] sm:h-[65vh] w-full">
           <Image
             src="/assets/img/blog/blog2.png"
-            alt="blog image"
+            alt="Stop Asking, Start Negotiating"
             fill
             className="object-fill"
           />
@@ -34,9 +34,7 @@ export default function BlogDetailPage() {
                 {t("blog.byTeam")}
               </span>
 
-              <p className="text-gray-500 text-lg">
-                7 {t("blog.minutesRead")}
-              </p>
+              <p className="text-gray-500 text-lg">7 {t("blog.minutesRead")}</p>
             </div>
           </div>
 

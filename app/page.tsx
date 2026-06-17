@@ -536,7 +536,9 @@ shadow-[0px_1px_5px_0px_#00000040]"
           {/* Heading */}
           <h2 className="mt-4 text-4xl md:text-5xl font-extrabold text-black">
             {t("home.mission.title.prefix")}{" "}
-            <span className="text-[#5C2CC6]">{t("home.mission.title.accent")}</span>
+            <span className="text-[#5C2CC6]">
+              {t("home.mission.title.accent")}
+            </span>
           </h2>
 
           {/* Subtitle */}
@@ -668,7 +670,9 @@ shadow-[0px_1px_5px_0px_#00000040]"
 
             <h2 className="text-4xl font-extrabold text-black mt-3">
               {t("home.work.title.prefix")}{" "}
-              <span className="text-[#5C2CC6]">{t("home.work.title.accent")}</span>
+              <span className="text-[#5C2CC6]">
+                {t("home.work.title.accent")}
+              </span>
             </h2>
 
             <p className="text-[#5A5A5A] mt-4 text-lg">
@@ -680,7 +684,7 @@ shadow-[0px_1px_5px_0px_#00000040]"
           <div className="flex justify-center">
             <Image
               src="/assets/img/about/process.png"
-              alt="Process"
+              alt="Work Process"
               width={900}
               height={400}
               className="w-full max-w-4xl h-auto"
@@ -784,7 +788,9 @@ shadow-[0px_1px_5px_0px_#00000040]"
 
             <h2 className="text-4xl font-extrabold text-black mt-3">
               {t("home.blog.title.prefix")}{" "}
-              <span className="text-[#5C2CC6]">{t("home.blog.title.accent")}</span>
+              <span className="text-[#5C2CC6]">
+                {t("home.blog.title.accent")}
+              </span>
             </h2>
 
             <p className="text-[#5A5A5A] mt-4 text-lg">

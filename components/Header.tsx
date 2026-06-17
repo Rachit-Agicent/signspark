@@ -71,12 +71,12 @@ export default function Header() {
             >
               {t("nav.contact")}
             </Link>
-            <Link
+            {/* <Link
               href="/#footer"
               className="px-3 py-2 text-lg font-medium text-black rounded-md transition-color"
             >
               {t("nav.legal")}
-            </Link>
+            </Link> */}
           </nav>
 
           {/* Language + Mobile menu */}
@@ -90,7 +90,9 @@ export default function Header() {
                 aria-expanded={langMenuOpen}
               >
                 <Globe size={20} className="text-black" />
-                <span>{lang === "es" ? t("lang.spanish") : t("lang.english")}</span>
+                <span>
+                  {lang === "es" ? t("lang.spanish") : t("lang.english")}
+                </span>
               </button>
 
               {langMenuOpen ? (
@@ -200,13 +202,13 @@ export default function Header() {
                   >
                     {t("nav.contact")}
                   </Link>
-                  <Link
+                  {/* <Link
                     href="/#footer"
                     onClick={() => setMobileOpen(false)}
                     className="px-3 py-2 text-lg font-[500] text-[#424242] rounded-md transition-color"
                   >
                     {t("nav.legal")}
-                  </Link>
+                  </Link> */}
                 </nav>
 
                 {/* Mobile Language */}

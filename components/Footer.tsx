@@ -3,8 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import Script from "next/script";
-import Image from "next/image";
 import {
   FaXTwitter,
   FaFacebook,
@@ -176,24 +174,6 @@ export default function Footer() {
               >
                 <FaLinkedin size={25} />
               </Link>
-
-              {/* DMCA badge */}
-              <Link
-                href="https://www.dmca.com/Protection/Status.aspx?ID=3089df9e-388a-4809-be47-38e66f7111db"
-                title="DMCA.com Protection Status"
-                className="dmca-badge"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="https://images.dmca.com/Badges/dmca_protected_sml_120m.png?ID=3089df9e-388a-4809-be47-38e66f7111db"
-                  alt="DMCA.com Protection Status"
-                  width={180}
-                  height={50}
-                />
-              </Link>
-
-              <Script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js" />
             </div>
             <p className="text-lg text-white mt-2">
               {t("footer.poweredBy")}{" "}

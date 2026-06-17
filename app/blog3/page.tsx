@@ -12,7 +12,7 @@ export default function BlogDetailPage() {
         <div className="relative h-[30vh] sm:h-[65vh] w-full">
           <Image
             src="/assets/img/blog/blog03.png"
-            alt="blog image"
+            alt="The MSRP Myth"
             fill
             className="object-cover"
           />
@@ -31,9 +31,7 @@ export default function BlogDetailPage() {
                 {t("blog.category.scams")}
               </span>
 
-              <p className="text-gray-500 text-lg">
-                5 {t("blog.minutesRead")}
-              </p>
+              <p className="text-gray-500 text-lg">5 {t("blog.minutesRead")}</p>
             </div>
           </div>
 
@@ -91,7 +89,9 @@ export default function BlogDetailPage() {
                   Tras analizar más de{" "}
                   <strong>10,000 acuerdos de compra verificados</strong> subidos
                   por nuestra comunidad, encontramos una verdad sorprendente:{" "}
-                  <strong>menos del 12% de los compradores paga exactamente MSRP.</strong>
+                  <strong>
+                    menos del 12% de los compradores paga exactamente MSRP.
+                  </strong>
                 </>
               ) : (
                 <>
@@ -116,9 +116,9 @@ export default function BlogDetailPage() {
                 <>
                   The reality is a chaotic scatterplot of pricing where two
                   neighbors buying the exact same car on the same day can pay a
-                  difference of <strong>$3,500 or more.</strong> Here is what our
-                  data revealed—and how you can ensure you are on the winning side
-                  of the math.
+                  difference of <strong>$3,500 or more.</strong> Here is what
+                  our data revealed—and how you can ensure you are on the
+                  winning side of the math.
                 </>
               )}
             </p>
@@ -141,19 +141,19 @@ export default function BlogDetailPage() {
             <p className="text-lg text-gray-700 mb-4">
               {lang === "es" ? (
                 <>
-                  Al agrupar el &quot;Total Cash Price&quot; (la cifra final antes
-                  de impuestos) en nuestra base de datos, encontramos que el
-                  precio promedio de transacción en SUV medianas populares fue{" "}
-                  <strong>$2,100 más alto</strong> que el MSRP mostrado en el
-                  sitio del fabricante.
+                  Al agrupar el &quot;Total Cash Price&quot; (la cifra final
+                  antes de impuestos) en nuestra base de datos, encontramos que
+                  el precio promedio de transacción en SUV medianas populares
+                  fue <strong>$2,100 más alto</strong> que el MSRP mostrado en
+                  el sitio del fabricante.
                 </>
               ) : (
                 <>
                   When we aggregated the &quot;Total Cash Price&quot; (the final
                   number before taxes) across our database, we found that the
                   average transaction price for popular mid-size SUVs was
-                  actually <strong>$2,100 higher</strong> than the MSRP listed on
-                  the manufacturer&apos;s website.
+                  actually <strong>$2,100 higher</strong> than the MSRP listed
+                  on the manufacturer&apos;s website.
                 </>
               )}
             </p>
@@ -167,9 +167,9 @@ export default function BlogDetailPage() {
                 </>
               ) : (
                 <>
-                  <strong>Where does this money go?</strong> It isn&apos;t in the
-                  base price. It hides in the &quot;Addendum Sticker&quot; next
-                  to the official Monroney label:
+                  <strong>Where does this money go?</strong> It isn&apos;t in
+                  the base price. It hides in the &quot;Addendum Sticker&quot;
+                  next to the official Monroney label:
                 </>
               )}
             </p>
@@ -212,7 +212,8 @@ export default function BlogDetailPage() {
                 <>
                   <strong>La clave:</strong> si negocias basándote en el MSRP,
                   estás peleando la batalla equivocada. Debes negociar el precio
-                  &quot;Out-the-Door&quot; (OTD), quitando las capas del iceberg.
+                  &quot;Out-the-Door&quot; (OTD), quitando las capas del
+                  iceberg.
                 </>
               ) : (
                 <>
@@ -246,7 +247,7 @@ export default function BlogDetailPage() {
                 </strong>{" "}
                 {lang === "es"
                   ? "En híbridos, minivanes (como Toyota Sienna) y deportivos de alto rendimiento, los contratos se firman de forma consistente 10–15% POR ENCIMA del MSRP. En esos casos, pagar “precio de etiqueta” puede ser una gran victoria."
-                  : "For hybrids, minivans (like the Toyota Sienna), and high-performance sports cars, our data shows contracts consistently signed at 10-15% ABOVE MSRP. In these cases, paying \"Sticker Price\" is actually a massive victory."}
+                  : 'For hybrids, minivans (like the Toyota Sienna), and high-performance sports cars, our data shows contracts consistently signed at 10-15% ABOVE MSRP. In these cases, paying "Sticker Price" is actually a massive victory.'}
               </li>
               <li>
                 <strong>
@@ -262,17 +263,17 @@ export default function BlogDetailPage() {
               {lang === "es" ? (
                 <>
                   <strong>La trampa:</strong> los concesionarios aplican la
-                  mentalidad de &quot;por encima&quot; a autos que deberían estar
-                  &quot;por debajo&quot;. Harán ver que venderte una camioneta a
-                  MSRP es un favor, cuando los datos muestran que otros obtienen
-                  $4,000 de descuento.
+                  mentalidad de &quot;por encima&quot; a autos que deberían
+                  estar &quot;por debajo&quot;. Harán ver que venderte una
+                  camioneta a MSRP es un favor, cuando los datos muestran que
+                  otros obtienen $4,000 de descuento.
                 </>
               ) : (
                 <>
-                  <strong>The Trap:</strong> Dealers love to use the &quot;Over&quot;
-                  mindset on &quot;Under&quot; cars. They will act like selling you
-                  a truck at MSRP is a favor, when community data shows everyone
-                  else is getting $4,000 off.
+                  <strong>The Trap:</strong> Dealers love to use the
+                  &quot;Over&quot; mindset on &quot;Under&quot; cars. They will
+                  act like selling you a truck at MSRP is a favor, when
+                  community data shows everyone else is getting $4,000 off.
                 </>
               )}
             </p>
@@ -281,7 +282,9 @@ export default function BlogDetailPage() {
           {/* SECTION 3 */}
           <div className="mt-14">
             <h2 className="text-3xl font-semibold mb-6">
-              {lang === "es" ? "El “impuesto del código postal”" : 'The "Zip Code" Tax'}
+              {lang === "es"
+                ? "El “impuesto del código postal”"
+                : 'The "Zip Code" Tax'}
             </h2>
 
             <p className="text-lg text-gray-700 mb-4">
@@ -298,19 +301,31 @@ export default function BlogDetailPage() {
 
             <ul className="list-disc ml-6 space-y-2 text-lg text-gray-700">
               <li>
-                <strong>{lang === "es" ? "Comprador A (Florida):" : "Buyer A (Florida):"}</strong>{" "}
+                <strong>
+                  {lang === "es"
+                    ? "Comprador A (Florida):"
+                    : "Buyer A (Florida):"}
+                </strong>{" "}
                 {lang === "es"
                   ? "Pagó $999 en “tarifas de documentación del concesionario”."
                   : 'Paid $999 in "Dealer Doc Fees."'}
               </li>
               <li>
-                <strong>{lang === "es" ? "Comprador B (California):" : "Buyer B (California):"}</strong>{" "}
+                <strong>
+                  {lang === "es"
+                    ? "Comprador B (California):"
+                    : "Buyer B (California):"}
+                </strong>{" "}
                 {lang === "es"
                   ? "Pagó $85 en “tarifas de documentación del concesionario”."
                   : 'Paid $85 in "Dealer Doc Fees."'}
               </li>
               <li>
-                <strong>{lang === "es" ? "Comprador C (New York):" : "Buyer C (New York):"}</strong>{" "}
+                <strong>
+                  {lang === "es"
+                    ? "Comprador C (New York):"
+                    : "Buyer C (New York):"}
+                </strong>{" "}
                 {lang === "es"
                   ? "Pagó $175 en “tarifas de documentación del concesionario”."
                   : 'Paid $175 in "Dealer Doc Fees."'}
@@ -320,21 +335,25 @@ export default function BlogDetailPage() {
             <p className="text-lg text-gray-700 mt-6">
               {lang === "es" ? (
                 <>
-                  <strong>Eso es una diferencia de $900 por el mismo papeleo.</strong>{" "}
-                  Aunque algunos estados limitan estas tarifas, muchos compradores
-                  creen que son “impuestos del gobierno”. No lo son: son ganancias
-                  del concesionario. Nuestros datos muestran qué estados son zonas
-                  de alto riesgo por tarifas para que estés alerta.
+                  <strong>
+                    Eso es una diferencia de $900 por el mismo papeleo.
+                  </strong>{" "}
+                  Aunque algunos estados limitan estas tarifas, muchos
+                  compradores creen que son “impuestos del gobierno”. No lo son:
+                  son ganancias del concesionario. Nuestros datos muestran qué
+                  estados son zonas de alto riesgo por tarifas para que estés
+                  alerta.
                 </>
               ) : (
                 <>
                   <strong>
                     That is a $900 difference for the exact same paperwork.
                   </strong>{" "}
-                  While state laws cap some of these fees, many buyers assume these
-                  are &quot;government taxes.&quot; They are not. They are dealer
-                  profits. Our data highlights exactly which states are &quot;High
-                  Fee Danger Zones&quot; so you can be extra vigilant.
+                  While state laws cap some of these fees, many buyers assume
+                  these are &quot;government taxes.&quot; They are not. They are
+                  dealer profits. Our data highlights exactly which states are
+                  &quot;High Fee Danger Zones&quot; so you can be extra
+                  vigilant.
                 </>
               )}
             </p>
@@ -356,10 +375,11 @@ export default function BlogDetailPage() {
                 </>
               ) : (
                 <>
-                  We also analyzed the Finance section of the contracts. The data
-                  revealed that buyers with the
-                  <strong> exact same credit score (720+)</strong> were receiving
-                  interest rates that varied by up to <strong>2.5%.</strong>
+                  We also analyzed the Finance section of the contracts. The
+                  data revealed that buyers with the
+                  <strong> exact same credit score (720+)</strong> were
+                  receiving interest rates that varied by up to{" "}
+                  <strong>2.5%.</strong>
                 </>
               )}
             </p>
@@ -459,11 +479,14 @@ export default function BlogDetailPage() {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a href="#!" className="text-purple-600 font-semibold text-lg">
-                {">"} {lang === "es" ? "Ver datos en vivo" : "View the Live Data"}
+                {">"}{" "}
+                {lang === "es" ? "Ver datos en vivo" : "View the Live Data"}
               </a>
               <a href="#!" className="text-purple-600 font-semibold text-lg">
                 {">"}{" "}
-                {lang === "es" ? "Obtener mi informe de equidad" : "Get My Fairness Report"}
+                {lang === "es"
+                  ? "Obtener mi informe de equidad"
+                  : "Get My Fairness Report"}
               </a>
             </div>
           </div>

@@ -12,7 +12,7 @@ export default function BlogDetailPage() {
         <div className="relative h-[30vh] sm:h-[65vh] w-full">
           <Image
             src="/assets/img/blog/blog1.png"
-            alt="Blog Image"
+            alt="Dirty Dozen"
             fill
             className="object-fill"
             priority
@@ -36,9 +36,7 @@ export default function BlogDetailPage() {
                 {t("blog.byTeam")}
               </span>
 
-              <p className="text-gray-500 text-lg">
-                5 {t("blog.minutesRead")}
-              </p>
+              <p className="text-gray-500 text-lg">5 {t("blog.minutesRead")}</p>
             </div>
           </div>
 
@@ -94,11 +92,15 @@ export default function BlogDetailPage() {
                     $99 – $499
                   </li>
                   <li>
-                    <strong>{lang === "es" ? "El discurso:" : "The Pitch:"}</strong>{" "}
+                    <strong>
+                      {lang === "es" ? "El discurso:" : "The Pitch:"}
+                    </strong>{" "}
                     "It keeps tire pressure stable better than regular air."
                   </li>
                   <li>
-                    <strong>{lang === "es" ? "La realidad:" : "The Reality:"}</strong>{" "}
+                    <strong>
+                      {lang === "es" ? "La realidad:" : "The Reality:"}
+                    </strong>{" "}
                     The air we breathe is already 78% nitrogen. Paying $200 for
                     green valve caps is one of the biggest scams in the
                     industry.
