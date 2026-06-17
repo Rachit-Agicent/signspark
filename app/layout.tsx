@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import "./globals.css";
+import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { I18nProvider } from "@/lib/i18n/I18nProvider";
@@ -9,7 +10,8 @@ import Script from "next/script";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
-export const metadata = {
+export const metadata: Metadata = {
+  metadataBase: new URL("https://signspark.com"),
   title: "SignSpark",
   description:
     "Spot unfair terms in your car contract instantly. SignSpark scans your dealership paperwork against real-time state laws to flag hidden fees and compliance risks.",
@@ -33,17 +35,17 @@ export const metadata = {
       "Spot unfair terms in your car contract instantly. SignSpark scans your dealership paperwork against real-time state laws to flag hidden fees and compliance risks.",
     images: [
       {
-        url: "assets/img/og_default_meta_image.png",
+        url: "/assets/img/og_default_meta_image.png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    domain: "signspark.com",
+    site: "signspark.com",
     title: "SignSpark - Identify Unfair Terms in Your Car Contract",
     description:
       "Spot unfair terms in your car contract instantly. SignSpark scans your dealership paperwork against real-time state laws to flag hidden fees and compliance risks.",
-    images: ["assets/img/og_default_meta_image.png"],
+    images: ["/assets/img/og_default_meta_image.png"],
   },
   other: {
     "revisit-after": "1 days",
@@ -51,7 +53,9 @@ export const metadata = {
     publisher: "SignSpark",
     "twitter:url": "https://signspark.com/",
   },
-  canonical: "https://signspark.com/",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({

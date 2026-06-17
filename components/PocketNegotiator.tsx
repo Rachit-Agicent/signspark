@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import { useI18n } from "@/lib/i18n/I18nProvider";
 
-
 export default function PocketNegotiator() {
   const { t } = useI18n();
 
@@ -71,10 +70,10 @@ export default function PocketNegotiator() {
             </p>
 
             {/* Heading */}
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
               {t("pocket.titlePrefix")}{" "}
               <span className="text-[#5C2CC6]">{t("pocket.titleAccent")}</span>
-            </h1>
+            </h2>
           </div>
           <div className="flex justify-center relative">
             <div className="relative w-full h-[700px]">
@@ -97,10 +96,10 @@ export default function PocketNegotiator() {
             </p>
 
             {/* Heading */}
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
               {t("pocket.titlePrefix")}{" "}
               <span className="text-[#5C2CC6]">{t("pocket.titleAccent")}</span>
-            </h1>
+            </h2>
           </div>
 
           {/* Description */}
