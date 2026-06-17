@@ -12,9 +12,9 @@ const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://signspark.com"),
-  title: "SignSpark",
+  title: "SignSpark | AI Negotiator for Car Buyers & Contracts",
   description:
-    "Spot unfair terms in your car contract instantly. SignSpark scans your dealership paperwork against real-time state laws to flag hidden fees and compliance risks.",
+    "Analyze dealership contracts in seconds with AI. Spot hidden fees, compliance risks, and overcharges before you sign. Save more at the dealership.",
   icons: {
     icon: "/assets/img/favicon.svg",
   },
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://signspark.com/",
-    title: "SignSpark",
+    title: "SignSpark | AI Negotiator for Car Buyers & Contracts",
     description:
-      "Spot unfair terms in your car contract instantly. SignSpark scans your dealership paperwork against real-time state laws to flag hidden fees and compliance risks.",
+      "Analyze dealership contracts in seconds with AI. Spot hidden fees, compliance risks, and overcharges before you sign. Save more at the dealership.",
     images: [
       {
         url: "/assets/img/og_default_meta_image.png",
@@ -42,9 +42,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "signspark.com",
-    title: "SignSpark - Identify Unfair Terms in Your Car Contract",
+    title: "SignSpark | AI Negotiator for Car Buyers & Contracts",
     description:
-      "Spot unfair terms in your car contract instantly. SignSpark scans your dealership paperwork against real-time state laws to flag hidden fees and compliance risks.",
+      "Analyze dealership contracts in seconds with AI. Spot hidden fees, compliance risks, and overcharges before you sign. Save more at the dealership.",
     images: ["/assets/img/og_default_meta_image.png"],
   },
   other: {
