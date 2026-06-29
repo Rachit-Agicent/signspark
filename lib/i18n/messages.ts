@@ -130,7 +130,7 @@ export const messages: Record<Lang, Messages> = {
     "home.about.card.row1.title": "Built for Transparency",
     "home.about.card.row1.desc":
       "Our AI surfaces what matters most—fees, compliance risks, and unfair terms—so you can make clear decisions.",
-    "home.about.card.row2.title": "Plus Jakarta Sans",
+    "home.about.card.row2.title": "Designed for Confident Decisions",
     "home.about.card.row2.desc":
       "Get a clear summary of what to negotiate—so you can act quickly at the signing table.",
 
